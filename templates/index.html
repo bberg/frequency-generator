@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency Generator - Precise Audio Tone Generator for Calibration & Testing</title>
+    <meta name="description" content="Free online frequency generator with ultra-precise control (0.1Hz resolution). Perfect for audio calibration, hearing tests, speaker testing, and educational purposes.">
+    <meta name="keywords" content="frequency generator, tone generator, audio calibration, hearing test, 440Hz, sine wave, audio testing, speaker test">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <div class="header-content">
+                <h1>Frequency Generator</h1>
+                <p class="tagline">Ultra-precise audio tone generator for calibration & testing</p>
+            </div>
+            <div class="header-badges">
+                <span class="header-badge"><i class="ri-sound-module-line"></i> 0.1Hz Precision</span>
+                <span class="header-badge"><i class="ri-equalizer-line"></i> Calibration</span>
+                <span class="header-badge"><i class="ri-pulse-line"></i> FFT Analysis</span>
+            </div>
+        </header>
+
+        <nav class="mini-nav">
+            <a href="#generator" class="nav-link"><i class="ri-sound-module-line"></i> Generator</a>
+            <a href="#sweep" class="nav-link"><i class="ri-line-chart-line"></i> Sweep</a>
+            <a href="#presets" class="nav-link"><i class="ri-bookmark-line"></i> Presets</a>
+            <a href="#about-frequency" class="nav-link"><i class="ri-question-line"></i> Science</a>
+        </nav>
+
+        <div class="main-controls" id="generator">
+            <!-- Frequency Display -->
+            <div class="frequency-display">
+                <div class="freq-main">
+                    <span class="freq-value" id="freqDisplay">440.0</span>
+                    <span class="freq-unit">Hz</span>
+                </div>
+                <div class="freq-note" id="noteDisplay">A4</div>
+            </div>
+
+            <!-- Frequency Input Controls -->
+            <div class="freq-input-group">
+                <div class="freq-numeric">
+                    <label for="frequencyInput">Frequency (Hz)</label>
+                    <div class="input-with-buttons">
+                        <button class="freq-adjust-btn" data-adjust="-10"><i class="ri-subtract-line"></i>10</button>
+                        <button class="freq-adjust-btn" data-adjust="-1"><i class="ri-subtract-line"></i>1</button>
+                        <button class="freq-adjust-btn small" data-adjust="-0.1">-0.1</button>
+                        <input type="number" id="frequencyInput" min="1" max="22000" step="0.1" value="440.0">
+                        <button class="freq-adjust-btn small" data-adjust="0.1">+0.1</button>
+                        <button class="freq-adjust-btn" data-adjust="1"><i class="ri-add-line"></i>1</button>
+                        <button class="freq-adjust-btn" data-adjust="10"><i class="ri-add-line"></i>10</button>
+                    </div>
+                </div>
+                <div class="freq-slider-container">
+                    <input type="range" id="frequencySlider" min="1" max="22000" step="0.1" value="440">
+                    <div class="slider-labels">
+                        <span>1 Hz</span>
+                        <span>100</span>
+                        <span>1k</span>
+                        <span>10k</span>
+                        <span>22k Hz</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status -->
+            <div class="status-badge ready" id="statusBadge">
+                <span class="status-icon"></span>
+                <span class="status-text">Ready</span>
+            </div>
+
+            <!-- Play Button -->
+            <div class="action-buttons">
+                <button id="playButton" class="primary-btn">
+                    <i class="ri-play-fill"></i>
+                    <span>Play</span>
+                </button>
+            </div>
+
+            <!-- Waveform & FFT Visualization -->
+            <div class="visualization-container">
+                <div class="viz-panel">
+                    <div class="viz-header">
+                        <span class="viz-title">Waveform</span>
+                    </div>
+                    <canvas id="waveformCanvas"></canvas>
+                </div>
+                <div class="viz-panel">
+                    <div class="viz-header">
+                        <span class="viz-title">FFT Spectrum</span>
+                    </div>
+                    <canvas id="fftCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audio Controls -->
+        <div class="controls" id="audio-controls">
+            <div class="control-group">
+                <h3>Waveform & Channel</h3>
+
+                <label>Waveform</label>
+                <div class="waveform-buttons">
+                    <button class="waveform-btn active" data-waveform="sine">
+                        <i class="ri-pulse-line"></i> Sine
+                    </button>
+                    <button class="waveform-btn" data-waveform="square">
+                        <i class="ri-checkbox-blank-line"></i> Square
+                    </button>
+                    <button class="waveform-btn" data-waveform="sawtooth">
+                        <i class="ri-arrow-right-up-line"></i> Sawtooth
+                    </button>
+                    <button class="waveform-btn" data-waveform="triangle">
+                        <i class="ri-arrow-up-line"></i> Triangle
+                    </button>
+                </div>
+
+                <label>Output Channel</label>
+                <div class="channel-buttons">
+                    <button class="channel-btn active" data-channel="both">
+                        <i class="ri-headphone-line"></i> Both
+                    </button>
+                    <button class="channel-btn" data-channel="left">
+                        <i class="ri-arrow-left-line"></i> Left
+                    </button>
+                    <button class="channel-btn" data-channel="right">
+                        <i class="ri-arrow-right-line"></i> Right
+                    </button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>Volume & Duration</h3>
+
+                <label for="volume">Volume</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+                <span class="value" id="volumeValue">50%</span>
+
+                <label>Duration Mode</label>
+                <div class="duration-buttons">
+                    <button class="duration-btn active" data-duration="continuous">
+                        <i class="ri-infinity-line"></i> Continuous
+                    </button>
+                    <button class="duration-btn" data-duration="1">1s</button>
+                    <button class="duration-btn" data-duration="2">2s</button>
+                    <button class="duration-btn" data-duration="5">5s</button>
+                    <button class="duration-btn" data-duration="10">10s</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sweep Controls -->
+        <div class="controls sweep-controls" id="sweep">
+            <div class="control-group full-width">
+                <h3>Frequency Sweep</h3>
+
+                <div class="sweep-inputs">
+                    <div class="sweep-field">
+                        <label for="sweepStart">Start Frequency (Hz)</label>
+                        <input type="number" id="sweepStart" min="1" max="22000" step="0.1" value="20">
+                    </div>
+                    <div class="sweep-arrow">
+                        <i class="ri-arrow-right-line"></i>
+                    </div>
+                    <div class="sweep-field">
+                        <label for="sweepEnd">End Frequency (Hz)</label>
+                        <input type="number" id="sweepEnd" min="1" max="22000" step="0.1" value="20000">
+                    </div>
+                </div>
+
+                <label for="sweepDuration">Sweep Duration (seconds)</label>
+                <input type="range" id="sweepDuration" min="1" max="60" value="10">
+                <span class="value" id="sweepDurationValue">10 sec</span>
+
+                <label>Sweep Type</label>
+                <div class="sweep-type-buttons">
+                    <button class="sweep-type-btn active" data-type="linear">
+                        <i class="ri-line-chart-line"></i> Linear
+                    </button>
+                    <button class="sweep-type-btn" data-type="logarithmic">
+                        <i class="ri-git-branch-line"></i> Logarithmic
+                    </button>
+                </div>
+
+                <div class="sweep-actions">
+                    <button id="sweepButton" class="sweep-btn">
+                        <i class="ri-play-fill"></i> Start Sweep
+                    </button>
+                    <div class="sweep-progress" id="sweepProgress">
+                        <div class="sweep-progress-bar" id="sweepProgressBar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calibration Presets -->
+        <div class="controls presets-section" id="presets">
+            <div class="control-group full-width">
+                <h3>Calibration Presets</h3>
+
+                <div class="preset-category">
+                    <h4>Standard Reference Tones</h4>
+                    <div class="preset-buttons">
+                        <button class="preset-btn" data-freq="440">
+                            <span class="preset-freq">440 Hz</span>
+                            <span class="preset-name">A4 Concert Pitch</span>
+                        </button>
+                        <button class="preset-btn" data-freq="1000">
+                            <span class="preset-freq">1000 Hz</span>
+                            <span class="preset-name">Reference Tone</span>
+                        </button>
+                        <button class="preset-btn" data-freq="432">
+                            <span class="preset-freq">432 Hz</span>
+                            <span class="preset-name">Verdi Pitch</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="preset-category">
+                    <h4>Hearing Test Frequencies</h4>
+                    <div class="preset-buttons">
+                        <button class="preset-btn" data-freq="125">
+                            <span class="preset-freq">125 Hz</span>
+                            <span class="preset-name">Low Bass</span>
+                        </button>
+                        <button class="preset-btn" data-freq="250">
+                            <span class="preset-freq">250 Hz</span>
+                            <span class="preset-name">Bass</span>
+                        </button>
+                        <button class="preset-btn" data-freq="500">
+                            <span class="preset-freq">500 Hz</span>
+                            <span class="preset-name">Low Mid</span>
+                        </button>
+                        <button class="preset-btn" data-freq="1000">
+                            <span class="preset-freq">1000 Hz</span>
+                            <span class="preset-name">Mid</span>
+                        </button>
+                        <button class="preset-btn" data-freq="2000">
+                            <span class="preset-freq">2000 Hz</span>
+                            <span class="preset-name">High Mid</span>
+                        </button>
+                        <button class="preset-btn" data-freq="4000">
+                            <span class="preset-freq">4000 Hz</span>
+                            <span class="preset-name">Presence</span>
+                        </button>
+                        <button class="preset-btn" data-freq="8000">
+                            <span class="preset-freq">8000 Hz</span>
+                            <span class="preset-name">Brilliance</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="preset-category">
+                    <h4>Musical Notes (Equal Temperament)</h4>
+                    <div class="preset-buttons notes">
+                        <button class="preset-btn small" data-freq="261.63">C4</button>
+                        <button class="preset-btn small" data-freq="293.66">D4</button>
+                        <button class="preset-btn small" data-freq="329.63">E4</button>
+                        <button class="preset-btn small" data-freq="349.23">F4</button>
+                        <button class="preset-btn small" data-freq="392.00">G4</button>
+                        <button class="preset-btn small" data-freq="440.00">A4</button>
+                        <button class="preset-btn small" data-freq="493.88">B4</button>
+                        <button class="preset-btn small" data-freq="523.25">C5</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Educational Content -->
+        <section class="content-section" id="about-frequency">
+            <article class="content-article">
+                <h2>Understanding Audio Frequency</h2>
+                <p class="intro-text">Frequency is the fundamental property of sound that determines pitch. Measured in Hertz (Hz), it represents the number of complete wave cycles per second. Understanding frequency is essential for audio calibration, hearing assessment, and music production.</p>
+
+                <h3>What is Frequency?</h3>
+                <p>Sound travels through air as pressure waves. The frequency of a sound wave determines how many times these pressure variations occur per second. A higher frequency means more cycles per second, which we perceive as a higher pitch. The human ear can typically detect frequencies between 20 Hz and 20,000 Hz, though this range decreases with age.</p>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4><i class="ri-volume-down-line"></i> Low Frequencies (20-250 Hz)</h4>
+                        <p>Low frequencies produce deep, bass sounds. You can often feel these as vibrations in addition to hearing them. Bass drums, bass guitars, and thunder operate in this range. Sub-bass frequencies below 60 Hz are more felt than heard.</p>
+                        <p class="noise-specs"><strong>Examples:</strong> Bass drum (60-100 Hz), Male voice fundamental (85-180 Hz)<br><strong>Character:</strong> Deep, rumbling, powerful</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h4><i class="ri-volume-vibrate-line"></i> Mid Frequencies (250-4000 Hz)</h4>
+                        <p>The mid-range contains most speech information and is where human hearing is most sensitive. Musical instruments' fundamental tones and harmonics occupy this space. The ear canal resonates around 3 kHz, making this region particularly prominent.</p>
+                        <p class="noise-specs"><strong>Examples:</strong> Human voice (300-3400 Hz), Piano middle C (262 Hz)<br><strong>Character:</strong> Clear, present, articulate</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h4><i class="ri-volume-up-line"></i> High Frequencies (4000-20000 Hz)</h4>
+                        <p>High frequencies add brightness, air, and detail to sound. Cymbals, harmonics, and sibilance in speech occupy this range. Sensitivity to high frequencies typically decreases with age, a condition called presbycusis.</p>
+                        <p class="noise-specs"><strong>Examples:</strong> Cymbals (8-12 kHz), Consonant sounds (2-8 kHz)<br><strong>Character:</strong> Bright, airy, detailed</p>
+                    </div>
+                </div>
+
+                <h3>The Mathematics of Musical Pitch</h3>
+                <p>Western music uses a 12-tone equal temperament system where each octave is divided into 12 semitones. Each semitone represents a frequency ratio of the 12th root of 2 (approximately 1.05946). This means each octave exactly doubles the frequency.</p>
+
+                <div class="math-block">
+                    <code>f = 440 x 2<sup>(n/12)</sup></code>
+                    <p class="math-desc">Where <strong>f</strong> is frequency in Hz, <strong>440</strong> is A4 reference, and <strong>n</strong> is semitones from A4</p>
+                </div>
+
+                <h3>Standard Reference Frequencies</h3>
+                <ul class="feature-list">
+                    <li><strong>440 Hz (A4):</strong> The international standard for concert pitch since 1955. Most instruments and orchestras tune to this reference.</li>
+                    <li><strong>432 Hz:</strong> Alternative tuning sometimes called "Verdi pitch." Some claim it sounds more natural, though scientific evidence is limited.</li>
+                    <li><strong>1000 Hz:</strong> Common reference frequency for audio testing and calibration due to its position in the sensitive mid-range.</li>
+                    <li><strong>Audiometric Frequencies:</strong> Hearing tests typically use 125, 250, 500, 1000, 2000, 4000, and 8000 Hz to assess hearing across the audible spectrum.</li>
+                </ul>
+
+                <h3>Frequency Sweeps</h3>
+                <p>A frequency sweep (or tone sweep) continuously varies frequency over time. There are two main types:</p>
+                <ul class="feature-list">
+                    <li><strong>Linear Sweep:</strong> Frequency changes at a constant rate (Hz per second). Good for measuring frequency response but spends more time in higher octaves.</li>
+                    <li><strong>Logarithmic Sweep:</strong> Frequency changes exponentially, spending equal time in each octave. Better matches human hearing perception and is preferred for room acoustics measurements.</li>
+                </ul>
+
+                <h3>Applications of Frequency Generation</h3>
+                <ul class="feature-list">
+                    <li><strong>Audio Calibration:</strong> Testing speakers, headphones, and audio equipment for frequency response accuracy</li>
+                    <li><strong>Hearing Assessment:</strong> Screening for hearing loss at specific frequencies</li>
+                    <li><strong>Musical Tuning:</strong> Providing reference tones for instrument tuning</li>
+                    <li><strong>Scientific Research:</strong> Studying acoustic phenomena and psychoacoustics</li>
+                    <li><strong>Tinnitus Matching:</strong> Identifying the frequency characteristics of tinnitus for treatment</li>
+                    <li><strong>Education:</strong> Demonstrating the relationship between frequency and pitch</li>
+                </ul>
+
+                <h3>Safe Listening Practices</h3>
+                <p>When using a frequency generator, follow these guidelines to protect your hearing:</p>
+                <ul class="feature-list">
+                    <li><strong>Start at Low Volume:</strong> Always begin with the volume low and gradually increase to a comfortable level</li>
+                    <li><strong>Limit Exposure:</strong> Extended exposure to any sound above 85 dB can cause hearing damage</li>
+                    <li><strong>Take Breaks:</strong> If testing for extended periods, give your ears regular rest</li>
+                    <li><strong>Be Careful with High Frequencies:</strong> High-frequency tones can be perceived as louder and may cause discomfort</li>
+                    <li><strong>Avoid Sudden Changes:</strong> Abrupt volume or frequency changes can be startling and potentially harmful</li>
+                </ul>
+            </article>
+        </section>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">Frequency Generator</span>
+                    <p>Free online precision frequency generator for audio calibration, hearing tests, and educational purposes.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#generator">Generator</a>
+                    <a href="#sweep">Sweep Mode</a>
+                    <a href="#presets">Presets</a>
+                    <a href="#about-frequency">The Science</a>
+                </div>
+                <div class="footer-related">
+                    <h4>Related Tools</h4>
+                    <a href="https://noisegenerator.com" target="_blank">Noise Generator</a>
+                    <a href="https://sirengenerator.com" target="_blank">Siren Generator</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Part of the Audio Tools Network. For educational and personal use.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/frequency.js') }}"></script>
+</body>
+</html>

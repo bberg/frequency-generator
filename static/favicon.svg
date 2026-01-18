@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#0a0a0a"/>
+  <g fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round">
+    <!-- Sine wave pattern -->
+    <path d="M4 16 Q8 8, 12 16 T20 16 T28 16"/>
+  </g>
+  <g fill="#10b981">
+    <!-- Hz indicator dots -->
+    <circle cx="8" cy="24" r="1.5"/>
+    <circle cx="16" cy="24" r="1.5"/>
+    <circle cx="24" cy="24" r="1.5"/>
+  </g>
+</svg>
