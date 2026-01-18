@@ -1052,6 +1052,712 @@ body {
     color: #64748b;
 }
 
+/* ============================================
+   SPEAKER TEST SECTION
+   ============================================ */
+
+.speaker-test-section,
+.hearing-test-section {
+    padding: 0 3rem 2rem;
+}
+
+.section-intro {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+}
+
+.test-cards,
+.hearing-test-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.test-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.test-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.test-card-header i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.test-card-header h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+}
+
+.test-card > p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.test-tip {
+    font-size: 0.8125rem !important;
+    color: var(--text-muted) !important;
+    background: var(--surface);
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+}
+
+/* Stereo Test Controls */
+.stereo-test-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stereo-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.stereo-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.stereo-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #000;
+}
+
+.stereo-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.channel-indicator {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.channel-indicator.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #000;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Polarity Test Controls */
+.polarity-test-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.polarity-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.polarity-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.polarity-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #000;
+}
+
+/* Noise Buttons */
+.noise-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.noise-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.noise-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.noise-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #000;
+}
+
+.noise-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.noise-icon.pink {
+    background: #ec4899;
+}
+
+.noise-icon.white {
+    background: #fff;
+}
+
+.noise-icon.brown {
+    background: #92400e;
+}
+
+.noise-info {
+    padding: 0.75rem;
+    background: var(--surface);
+    border-radius: 6px;
+}
+
+.noise-info p {
+    margin: 0 !important;
+    font-size: 0.8125rem !important;
+}
+
+/* Bass Test Buttons */
+.bass-test-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.bass-btn {
+    padding: 0.625rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.bass-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.bass-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #000;
+}
+
+/* ============================================
+   HEARING TEST SECTION
+   ============================================ */
+
+.hearing-disclaimer {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.hearing-disclaimer i {
+    font-size: 1.25rem;
+    color: #fbbf24;
+    flex-shrink: 0;
+}
+
+.hearing-disclaimer p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.hearing-card {
+    background: var(--surface-raised);
+}
+
+.tinnitus-card {
+    grid-column: 1 / -1;
+}
+
+.hearing-age-guide {
+    margin-bottom: 1rem;
+}
+
+.age-range {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
+.age-range:last-child {
+    border-bottom: none;
+}
+
+.age-range span:first-child {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.hearing-test-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.hearing-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hearing-btn:hover {
+    background: var(--primary-dark);
+}
+
+.hearing-btn.secondary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.hearing-btn.secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.hearing-result {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.result-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.result-label {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+.result-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Ear Selector */
+.ear-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.ear-btn {
+    flex: 1;
+    padding: 0.625rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ear-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.ear-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #000;
+}
+
+/* Audiometric Buttons */
+.audiometric-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.audio-freq-btn {
+    padding: 0.625rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.audio-freq-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.audio-freq-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #000;
+}
+
+/* Tinnitus Controls */
+.tinnitus-disclaimer {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.tinnitus-disclaimer i {
+    color: #3b82f6;
+    flex-shrink: 0;
+}
+
+.tinnitus-disclaimer p {
+    margin: 0 !important;
+    font-size: 0.8125rem !important;
+    color: var(--text-secondary);
+}
+
+.tinnitus-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.tinnitus-range {
+    grid-column: 1 / -1;
+}
+
+.tinnitus-range label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.tinnitus-range input[type="range"] {
+    width: 100%;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    outline: none;
+    -webkit-appearance: none;
+    margin: 0.5rem 0;
+}
+
+.tinnitus-range input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.tinnitus-freq-display {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 0.5rem;
+}
+
+.tinnitus-actions {
+    display: flex;
+    gap: 0.5rem;
+    grid-column: 1 / -1;
+}
+
+.tinnitus-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tinnitus-btn:hover {
+    background: var(--primary-dark);
+}
+
+.tinnitus-btn.secondary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.tinnitus-btn.secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* ============================================
+   EDUCATIONAL CONTENT ENHANCEMENTS
+   ============================================ */
+
+.note-frequency-table {
+    margin: 1.5rem 0;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.note-frequency-table h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.note-table {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.note-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+}
+
+.note-row:last-child {
+    border-bottom: none;
+}
+
+.note-row.header {
+    font-weight: 600;
+    color: var(--text);
+    background: var(--surface);
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.25rem;
+}
+
+.note-row span {
+    color: var(--text-secondary);
+}
+
+.note-row span:nth-child(odd) {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.warning-box {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.warning-box i {
+    font-size: 1.5rem;
+    color: #ef4444;
+    flex-shrink: 0;
+}
+
+.warning-box strong {
+    display: block;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+}
+
+.warning-box p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.testing-guide {
+    display: grid;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.test-guide-item {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.test-guide-item h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+.test-guide-item h4 i {
+    font-size: 1.125rem;
+}
+
+.test-guide-item p {
+    margin-bottom: 0.75rem;
+}
+
+.test-guide-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.test-guide-item ul li {
+    padding: 0.375rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.test-guide-item ul li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.test-guide-item ul li strong {
+    color: var(--text);
+}
+
+/* Info cards in educational content */
+.info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.info-card ul li {
+    padding: 0.25rem 0;
+    padding-left: 1rem;
+    position: relative;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
+.info-card ul li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 0.75rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
@@ -1137,5 +1843,43 @@ body {
 
     .footer-bottom {
         padding: 1rem 1.5rem;
+    }
+
+    /* Speaker and Hearing Test responsive */
+    .speaker-test-section,
+    .hearing-test-section {
+        padding: 0 1.5rem 1.5rem;
+    }
+
+    .test-cards,
+    .hearing-test-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .tinnitus-card {
+        grid-column: 1;
+    }
+
+    .stereo-test-controls,
+    .polarity-test-controls,
+    .noise-buttons {
+        flex-direction: column;
+    }
+
+    .tinnitus-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .tinnitus-actions {
+        flex-direction: column;
+    }
+
+    .note-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .warning-box {
+        flex-direction: column;
     }
 }

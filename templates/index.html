@@ -28,6 +28,8 @@
         <nav class="mini-nav">
             <a href="#generator" class="nav-link"><i class="ri-sound-module-line"></i> Generator</a>
             <a href="#sweep" class="nav-link"><i class="ri-line-chart-line"></i> Sweep</a>
+            <a href="#speaker-test" class="nav-link"><i class="ri-speaker-3-line"></i> Speaker Test</a>
+            <a href="#hearing-test" class="nav-link"><i class="ri-ear-line"></i> Hearing Test</a>
             <a href="#presets" class="nav-link"><i class="ri-bookmark-line"></i> Presets</a>
             <a href="#about-frequency" class="nav-link"><i class="ri-question-line"></i> Science</a>
         </nav>
@@ -198,6 +200,197 @@
             </div>
         </div>
 
+        <!-- Speaker Test Section -->
+        <div class="controls speaker-test-section" id="speaker-test">
+            <div class="control-group full-width">
+                <h3>Speaker & Headphone Testing</h3>
+                <p class="section-intro">Test your speakers or headphones for proper channel balance, polarity, and frequency response.</p>
+
+                <div class="test-cards">
+                    <!-- Stereo Balance Test -->
+                    <div class="test-card">
+                        <div class="test-card-header">
+                            <i class="ri-headphone-line"></i>
+                            <h4>Stereo Balance Test</h4>
+                        </div>
+                        <p>Verify left and right channels are working correctly and balanced.</p>
+                        <div class="stereo-test-controls">
+                            <button class="stereo-btn" data-channel="left" id="testLeftBtn">
+                                <i class="ri-arrow-left-line"></i> Left Only
+                            </button>
+                            <button class="stereo-btn" data-channel="both" id="testBothBtn">
+                                <i class="ri-headphone-line"></i> Both
+                            </button>
+                            <button class="stereo-btn" data-channel="right" id="testRightBtn">
+                                <i class="ri-arrow-right-line"></i> Right Only
+                            </button>
+                        </div>
+                        <div class="stereo-indicator">
+                            <div class="channel-indicator left" id="leftIndicator">L</div>
+                            <div class="channel-indicator right" id="rightIndicator">R</div>
+                        </div>
+                    </div>
+
+                    <!-- Polarity Test -->
+                    <div class="test-card">
+                        <div class="test-card-header">
+                            <i class="ri-pulse-line"></i>
+                            <h4>Polarity / Phase Test</h4>
+                        </div>
+                        <p>Check if your speakers are wired correctly. Out-of-phase speakers will sound thin and lack bass.</p>
+                        <div class="polarity-test-controls">
+                            <button class="polarity-btn" id="polarityInPhase">
+                                <i class="ri-checkbox-circle-line"></i> In-Phase (Normal)
+                            </button>
+                            <button class="polarity-btn" id="polarityOutPhase">
+                                <i class="ri-close-circle-line"></i> Out-of-Phase (Inverted)
+                            </button>
+                        </div>
+                        <p class="test-tip"><strong>Tip:</strong> In-phase should sound full and centered. Out-of-phase sounds hollow.</p>
+                    </div>
+
+                    <!-- Noise Generator -->
+                    <div class="test-card">
+                        <div class="test-card-header">
+                            <i class="ri-sound-module-line"></i>
+                            <h4>Noise Generator</h4>
+                        </div>
+                        <p>Use noise signals for speaker testing, room acoustics, and calibration.</p>
+                        <div class="noise-buttons">
+                            <button class="noise-btn" data-noise="pink" id="pinkNoiseBtn">
+                                <span class="noise-icon pink"></span> Pink Noise
+                            </button>
+                            <button class="noise-btn" data-noise="white" id="whiteNoiseBtn">
+                                <span class="noise-icon white"></span> White Noise
+                            </button>
+                            <button class="noise-btn" data-noise="brown" id="brownNoiseBtn">
+                                <span class="noise-icon brown"></span> Brown Noise
+                            </button>
+                        </div>
+                        <div class="noise-info">
+                            <p id="noiseDescription">Select a noise type to learn more and play.</p>
+                        </div>
+                    </div>
+
+                    <!-- Subwoofer Test -->
+                    <div class="test-card">
+                        <div class="test-card-header">
+                            <i class="ri-volume-vibrate-line"></i>
+                            <h4>Subwoofer / Bass Test</h4>
+                        </div>
+                        <p>Test low-frequency reproduction. Use headphones or quality speakers.</p>
+                        <div class="bass-test-buttons">
+                            <button class="bass-btn" data-freq="20">20 Hz</button>
+                            <button class="bass-btn" data-freq="30">30 Hz</button>
+                            <button class="bass-btn" data-freq="40">40 Hz</button>
+                            <button class="bass-btn" data-freq="50">50 Hz</button>
+                            <button class="bass-btn" data-freq="60">60 Hz</button>
+                            <button class="bass-btn" data-freq="80">80 Hz</button>
+                        </div>
+                        <p class="test-tip"><strong>Note:</strong> Many laptop speakers cannot reproduce frequencies below 100 Hz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hearing Test Section -->
+        <div class="controls hearing-test-section" id="hearing-test">
+            <div class="control-group full-width">
+                <h3>Hearing Test</h3>
+                <div class="hearing-disclaimer">
+                    <i class="ri-information-line"></i>
+                    <p><strong>Disclaimer:</strong> This is not a medical hearing test. It provides only a rough indication of your hearing range. For accurate assessment, consult an audiologist.</p>
+                </div>
+
+                <div class="hearing-test-cards">
+                    <!-- Age-Related Hearing Test -->
+                    <div class="test-card hearing-card">
+                        <div class="test-card-header">
+                            <i class="ri-user-heart-line"></i>
+                            <h4>Hearing Age Test</h4>
+                        </div>
+                        <p>Test the highest frequency you can hear. Hearing naturally declines with age.</p>
+                        <div class="hearing-age-guide">
+                            <div class="age-range"><span>Under 25:</span> Can hear up to ~17,000-20,000 Hz</div>
+                            <div class="age-range"><span>25-35:</span> Can hear up to ~15,000-17,000 Hz</div>
+                            <div class="age-range"><span>35-45:</span> Can hear up to ~12,000-15,000 Hz</div>
+                            <div class="age-range"><span>45-55:</span> Can hear up to ~10,000-12,000 Hz</div>
+                            <div class="age-range"><span>Over 55:</span> Can hear up to ~8,000-10,000 Hz</div>
+                        </div>
+                        <div class="hearing-test-controls">
+                            <button class="hearing-btn" id="startHearingTest">
+                                <i class="ri-play-fill"></i> Start Hearing Test
+                            </button>
+                            <button class="hearing-btn secondary" id="stopHearingTest" style="display:none;">
+                                <i class="ri-stop-fill"></i> Stop Test
+                            </button>
+                        </div>
+                        <div class="hearing-result" id="hearingResult" style="display:none;">
+                            <div class="result-display">
+                                <span class="result-label">Highest Frequency Heard:</span>
+                                <span class="result-value" id="hearingResultValue">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Audiometric Frequencies -->
+                    <div class="test-card hearing-card">
+                        <div class="test-card-header">
+                            <i class="ri-bar-chart-grouped-line"></i>
+                            <h4>Audiometric Frequencies</h4>
+                        </div>
+                        <p>Test each ear at standard audiometric frequencies used in hearing tests.</p>
+                        <div class="ear-selector">
+                            <button class="ear-btn active" data-ear="both" id="earBoth">Both Ears</button>
+                            <button class="ear-btn" data-ear="left" id="earLeft">Left Ear</button>
+                            <button class="ear-btn" data-ear="right" id="earRight">Right Ear</button>
+                        </div>
+                        <div class="audiometric-buttons">
+                            <button class="audio-freq-btn" data-freq="125">125 Hz</button>
+                            <button class="audio-freq-btn" data-freq="250">250 Hz</button>
+                            <button class="audio-freq-btn" data-freq="500">500 Hz</button>
+                            <button class="audio-freq-btn" data-freq="1000">1 kHz</button>
+                            <button class="audio-freq-btn" data-freq="2000">2 kHz</button>
+                            <button class="audio-freq-btn" data-freq="4000">4 kHz</button>
+                            <button class="audio-freq-btn" data-freq="8000">8 kHz</button>
+                        </div>
+                        <p class="test-tip"><strong>How to test:</strong> Start with both ears, then test each ear separately to compare. Press each frequency button and note if you can hear it clearly.</p>
+                    </div>
+
+                    <!-- Tinnitus Matcher -->
+                    <div class="test-card hearing-card tinnitus-card">
+                        <div class="test-card-header">
+                            <i class="ri-focus-3-line"></i>
+                            <h4>Tinnitus Frequency Matcher</h4>
+                        </div>
+                        <p>If you experience tinnitus (ringing in ears), this tool can help identify the frequency.</p>
+                        <div class="tinnitus-disclaimer">
+                            <i class="ri-alert-line"></i>
+                            <p>Knowing your tinnitus frequency may help with masking sounds. Always consult an audiologist for proper diagnosis and treatment.</p>
+                        </div>
+                        <div class="tinnitus-controls">
+                            <div class="tinnitus-range">
+                                <label>Adjust frequency to match your tinnitus:</label>
+                                <input type="range" id="tinnitusSlider" min="1000" max="12000" step="10" value="4000">
+                                <div class="tinnitus-freq-display">
+                                    <span id="tinnitusFreqDisplay">4000 Hz</span>
+                                </div>
+                            </div>
+                            <div class="tinnitus-actions">
+                                <button class="tinnitus-btn" id="playTinnitus">
+                                    <i class="ri-play-fill"></i> Play Tone
+                                </button>
+                                <button class="tinnitus-btn secondary" id="checkOctave">
+                                    <i class="ri-arrow-up-down-line"></i> Check Octave
+                                </button>
+                            </div>
+                            <p class="test-tip"><strong>Octave check:</strong> It's common to match the wrong octave. Click "Check Octave" to hear one octave higher and lower to verify your match.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Calibration Presets -->
         <div class="controls presets-section" id="presets">
             <div class="control-group full-width">
@@ -300,12 +493,129 @@
                     </div>
                 </div>
 
-                <h3>The Mathematics of Musical Pitch</h3>
-                <p>Western music uses a 12-tone equal temperament system where each octave is divided into 12 semitones. Each semitone represents a frequency ratio of the 12th root of 2 (approximately 1.05946). This means each octave exactly doubles the frequency.</p>
+                <h3>How Frequency Relates to Musical Pitch</h3>
+                <p>Musical notes correspond to specific frequencies. When we say "middle C," we mean a sound wave vibrating at 261.63 Hz. The relationship between frequency and pitch is logarithmic: doubling the frequency raises the pitch by exactly one octave. This is why A4 (440 Hz) and A5 (880 Hz) sound like the same note, just higher.</p>
+
+                <div class="note-frequency-table">
+                    <h4>Musical Notes and Their Frequencies (A4 = 440 Hz)</h4>
+                    <div class="note-table">
+                        <div class="note-row header">
+                            <span>Note</span><span>Frequency</span><span>Note</span><span>Frequency</span>
+                        </div>
+                        <div class="note-row"><span>C4</span><span>261.63 Hz</span><span>C5</span><span>523.25 Hz</span></div>
+                        <div class="note-row"><span>D4</span><span>293.66 Hz</span><span>D5</span><span>587.33 Hz</span></div>
+                        <div class="note-row"><span>E4</span><span>329.63 Hz</span><span>E5</span><span>659.25 Hz</span></div>
+                        <div class="note-row"><span>F4</span><span>349.23 Hz</span><span>F5</span><span>698.46 Hz</span></div>
+                        <div class="note-row"><span>G4</span><span>392.00 Hz</span><span>G5</span><span>783.99 Hz</span></div>
+                        <div class="note-row"><span>A4</span><span>440.00 Hz</span><span>A5</span><span>880.00 Hz</span></div>
+                        <div class="note-row"><span>B4</span><span>493.88 Hz</span><span>B5</span><span>987.77 Hz</span></div>
+                    </div>
+                </div>
 
                 <div class="math-block">
                     <code>f = 440 x 2<sup>(n/12)</sup></code>
                     <p class="math-desc">Where <strong>f</strong> is frequency in Hz, <strong>440</strong> is A4 reference, and <strong>n</strong> is semitones from A4</p>
+                </div>
+
+                <h3>Hearing Range and Age-Related Hearing Loss</h3>
+                <p>Human hearing spans approximately 20 Hz to 20,000 Hz at birth. However, this range naturally decreases with age, particularly at higher frequencies. This age-related hearing loss, called presbycusis, is a normal part of aging.</p>
+
+                <div class="info-grid">
+                    <div class="info-card hearing-info">
+                        <h4><i class="ri-user-line"></i> Young Adults (Under 25)</h4>
+                        <p>Can typically hear frequencies up to 17,000-20,000 Hz. Full hearing range with maximum sensitivity to high frequencies.</p>
+                        <p class="noise-specs"><strong>Typical Range:</strong> 20 Hz - 20,000 Hz</p>
+                    </div>
+                    <div class="info-card hearing-info">
+                        <h4><i class="ri-user-2-line"></i> Adults (25-50)</h4>
+                        <p>Gradual decline in high-frequency sensitivity begins. Most people start losing frequencies above 15,000 Hz in their 30s.</p>
+                        <p class="noise-specs"><strong>Typical Range:</strong> 20 Hz - 12,000-17,000 Hz</p>
+                    </div>
+                    <div class="info-card hearing-info">
+                        <h4><i class="ri-user-3-line"></i> Seniors (Over 50)</h4>
+                        <p>More noticeable high-frequency loss. Speech comprehension in noisy environments may become challenging.</p>
+                        <p class="noise-specs"><strong>Typical Range:</strong> 20 Hz - 8,000-12,000 Hz</p>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <i class="ri-alert-line"></i>
+                    <div>
+                        <strong>Noise-Induced Hearing Loss</strong>
+                        <p>Beyond age-related decline, exposure to loud sounds can cause permanent hearing damage at any age. Sounds above 85 dB (busy traffic, lawn mower) can cause damage with prolonged exposure. Sounds above 120 dB (concerts, sirens) can cause immediate damage. Protect your hearing by using earplugs in loud environments and keeping headphone volume moderate.</p>
+                    </div>
+                </div>
+
+                <h3>Speaker and Headphone Testing Guide</h3>
+                <p>Use this frequency generator to evaluate your audio equipment. Here's how to test different aspects:</p>
+
+                <div class="testing-guide">
+                    <div class="test-guide-item">
+                        <h4><i class="ri-speaker-3-line"></i> Frequency Response Test</h4>
+                        <p>Use the frequency sweep (20 Hz - 20 kHz) to identify any frequencies where your speakers are weak or strong. Listen for:</p>
+                        <ul>
+                            <li><strong>Bass extension:</strong> How low can your speakers go? Many small speakers roll off below 80-100 Hz.</li>
+                            <li><strong>Midrange clarity:</strong> The 1-4 kHz range should be clear and present.</li>
+                            <li><strong>High frequency response:</strong> Listen for smooth treble without harshness.</li>
+                            <li><strong>Resonances:</strong> Any frequencies that sound unnaturally loud indicate cabinet or driver resonances.</li>
+                        </ul>
+                    </div>
+
+                    <div class="test-guide-item">
+                        <h4><i class="ri-headphone-line"></i> Stereo Balance Test</h4>
+                        <p>Test left and right channels separately to verify:</p>
+                        <ul>
+                            <li>Both channels are working</li>
+                            <li>Volume is balanced between left and right</li>
+                            <li>No cross-talk between channels</li>
+                        </ul>
+                    </div>
+
+                    <div class="test-guide-item">
+                        <h4><i class="ri-pulse-line"></i> Polarity/Phase Test</h4>
+                        <p>Incorrect speaker wiring causes "out of phase" sound. Symptoms include:</p>
+                        <ul>
+                            <li>Weak or missing bass</li>
+                            <li>Sound seems to come from behind you</li>
+                            <li>Hollow, thin sound quality</li>
+                            <li>Poor stereo imaging</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Audio Calibration Procedures</h3>
+                <p>For professional audio work, calibration ensures accurate monitoring. Common procedures include:</p>
+
+                <ul class="feature-list">
+                    <li><strong>Reference Level Calibration:</strong> Use 1 kHz tone at -20 dBFS (digital) to calibrate monitor SPL. Professional studios often target 85 dB SPL at the listening position.</li>
+                    <li><strong>Subwoofer Integration:</strong> Use 80 Hz tone to set crossover point and level-match your subwoofer to main speakers.</li>
+                    <li><strong>Room Mode Identification:</strong> Sweep through 20-200 Hz to identify standing waves caused by room dimensions.</li>
+                    <li><strong>Phase Alignment:</strong> Use polarity test to ensure all speakers are wired correctly and in phase.</li>
+                </ul>
+
+                <h3>Understanding Tinnitus</h3>
+                <p>Tinnitus is the perception of sound when no external sound is present. It's commonly described as ringing, buzzing, hissing, or humming. While not a disease itself, tinnitus is often a symptom of underlying conditions like hearing loss, ear injury, or circulatory issues.</p>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4><i class="ri-focus-3-line"></i> About Tinnitus Frequencies</h4>
+                        <p>Most tinnitus occurs in the 2,000-8,000 Hz range, often correlating with frequencies where hearing loss has occurred. Matching your tinnitus frequency can help with:</p>
+                        <ul>
+                            <li>Selecting effective masking sounds</li>
+                            <li>Notched sound therapy programs</li>
+                            <li>Communicating with audiologists</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h4><i class="ri-shield-check-line"></i> Important Caveats</h4>
+                        <p>Self-matching tinnitus frequency has limitations:</p>
+                        <ul>
+                            <li>Octave confusion is common (matching 2x or 0.5x the actual frequency)</li>
+                            <li>Tinnitus may have multiple frequencies or be broadband</li>
+                            <li>Professional audiometric testing is more accurate</li>
+                            <li>Always consult a healthcare provider about tinnitus</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <h3>Standard Reference Frequencies</h3>
@@ -323,15 +633,37 @@
                     <li><strong>Logarithmic Sweep:</strong> Frequency changes exponentially, spending equal time in each octave. Better matches human hearing perception and is preferred for room acoustics measurements.</li>
                 </ul>
 
-                <h3>Applications of Frequency Generation</h3>
-                <ul class="feature-list">
-                    <li><strong>Audio Calibration:</strong> Testing speakers, headphones, and audio equipment for frequency response accuracy</li>
-                    <li><strong>Hearing Assessment:</strong> Screening for hearing loss at specific frequencies</li>
-                    <li><strong>Musical Tuning:</strong> Providing reference tones for instrument tuning</li>
-                    <li><strong>Scientific Research:</strong> Studying acoustic phenomena and psychoacoustics</li>
-                    <li><strong>Tinnitus Matching:</strong> Identifying the frequency characteristics of tinnitus for treatment</li>
-                    <li><strong>Education:</strong> Demonstrating the relationship between frequency and pitch</li>
-                </ul>
+                <h3>Understanding Noise Types</h3>
+                <p>Different types of noise have different frequency characteristics and applications:</p>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4><i class="ri-sound-module-line"></i> White Noise</h4>
+                        <p>Equal energy at all frequencies. Sounds "bright" or "hissy" because higher frequencies are perceived as louder. Used for:</p>
+                        <ul>
+                            <li>Testing audio equipment</li>
+                            <li>Sleep masking</li>
+                            <li>Audio signal processing</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h4><i class="ri-sound-module-line"></i> Pink Noise</h4>
+                        <p>Equal energy per octave (falls off at 3 dB per octave). Sounds more balanced to human ears. Preferred for:</p>
+                        <ul>
+                            <li>Speaker testing and calibration</li>
+                            <li>Room acoustics measurement</li>
+                            <li>Reference for mixing</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h4><i class="ri-sound-module-line"></i> Brown Noise</h4>
+                        <p>Falls off at 6 dB per octave, emphasizing low frequencies. Sounds deeper and more "rumbling." Used for:</p>
+                        <ul>
+                            <li>Relaxation and focus</li>
+                            <li>Masking low-frequency sounds</li>
+                            <li>Sleep improvement</li>
+                        </ul>
+                    </div>
+                </div>
 
                 <h3>Safe Listening Practices</h3>
                 <p>When using a frequency generator, follow these guidelines to protect your hearing:</p>
@@ -340,6 +672,7 @@
                     <li><strong>Limit Exposure:</strong> Extended exposure to any sound above 85 dB can cause hearing damage</li>
                     <li><strong>Take Breaks:</strong> If testing for extended periods, give your ears regular rest</li>
                     <li><strong>Be Careful with High Frequencies:</strong> High-frequency tones can be perceived as louder and may cause discomfort</li>
+                    <li><strong>Be Careful with Low Frequencies:</strong> Very low frequencies at high volume can damage speakers and potentially cause disorientation</li>
                     <li><strong>Avoid Sudden Changes:</strong> Abrupt volume or frequency changes can be startling and potentially harmful</li>
                 </ul>
             </article>
