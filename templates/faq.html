@@ -1,0 +1,435 @@
+{% extends "base.html" %}
+
+{% block title %}Frequency Generator FAQ - Common Questions About Test Tones & Hearing | TestTones{% endblock %}
+
+{% block description %}Answers to frequently asked questions about test tones, frequency generators, hearing tests, audio calibration, and sound frequencies. Learn about Hz, hearing range, and safe listening.{% endblock %}
+
+{% block meta_extra %}
+<meta property="og:title" content="Test Tone FAQ - Common Questions About Frequency and Hearing">
+<meta property="og:description" content="Expert answers about test tones, hearing range, audio calibration, frequency sweeps, and safe listening practices.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://testtones.com/faq">
+
+<!-- FAQ Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Hertz (Hz)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hertz (Hz) is the unit of frequency, measuring cycles per second. A 440 Hz tone means the sound wave completes 440 full cycles every second. Higher Hz means higher pitch. Human hearing typically ranges from 20 Hz (very low bass) to 20,000 Hz (very high treble), though this range decreases with age."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the human hearing range?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The theoretical human hearing range is 20 Hz to 20,000 Hz. However, most adults cannot hear the full range. By age 25-30, many people lose sensitivity above 15,000-17,000 Hz. By age 50-60, the upper limit may be 10,000-12,000 Hz. Low-frequency hearing typically remains stable throughout life."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What frequency is A440?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A440 refers to the musical note A above middle C, vibrating at 440 Hz. It has been the international standard for concert pitch since 1955. Orchestras and instruments are tuned so that A4 equals 440 Hz. Some musicians prefer alternative tunings like 432 Hz (Verdi pitch) or 442-443 Hz (common in European orchestras)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to listen to test tones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Test tones are safe at moderate volumes for reasonable durations. Follow the same guidelines as for any audio: keep volume below 85 dB for extended listening, take breaks every 60 minutes, and never use high volumes with headphones. Very low frequencies (below 20 Hz) at high volumes can cause disorientation. If you experience ringing, muffled hearing, or discomfort, reduce volume immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between linear and logarithmic frequency sweeps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Linear sweeps change frequency at a constant rate (e.g., 100 Hz per second), spending more time in higher octaves. Logarithmic sweeps change frequency exponentially, spending equal time in each octave. Logarithmic sweeps better match human hearing perception and are preferred for room acoustics measurement. Linear sweeps are useful when you need consistent resolution across the spectrum."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between white, pink, and brown noise?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "White noise has equal energy at all frequencies, sounding 'bright' or 'hissy.' Pink noise has equal energy per octave (falls off at 3 dB/octave), sounding more balanced and natural. Brown noise falls off at 6 dB/octave, emphasizing low frequencies with a deep, rumbling quality. Pink noise is preferred for speaker calibration; brown noise is popular for relaxation and sleep."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I test my hearing with this tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This tool provides rough self-assessment only, not clinical hearing testing. Without calibrated equipment and controlled conditions, absolute thresholds cannot be determined. However, you can use this tool to: compare left vs. right ear sensitivity, track relative changes over time, identify your approximate high-frequency limit, and screen for potential issues that warrant professional evaluation. For accurate hearing assessment, see a licensed audiologist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't I hear very low frequencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Several factors affect low-frequency perception: Most laptop and phone speakers cannot reproduce frequencies below 80-150 Hz. Small headphones and earbuds have limited bass extension. Room acoustics create standing waves that cause bass nulls at certain positions. Human hearing sensitivity decreases at frequency extremes (Fletcher-Munson curves). Use quality headphones or speakers with a subwoofer for accurate low-frequency testing."
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block tagline %}Answers to common questions about frequency and hearing{% endblock %}
+
+{% block content %}
+<div class="faq-container">
+    <div class="faq-hero">
+        <h1>Frequently Asked Questions</h1>
+        <p>Expert answers about test tones, frequency, hearing, and audio calibration.</p>
+    </div>
+
+    <!-- Basic Frequency Questions -->
+    <section class="faq-section">
+        <h2>Frequency Basics</h2>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What is a Hertz (Hz)?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p><strong>Hertz (Hz)</strong> is the unit of frequency, measuring cycles per second. A 440 Hz tone means the sound wave completes 440 full cycles every second.</p>
+                <p>Higher Hz means higher pitch. Human hearing typically ranges from 20 Hz (very low bass) to 20,000 Hz (very high treble), though this range decreases with age.</p>
+                <p>The term honors Heinrich Hertz, the German physicist who first conclusively proved the existence of electromagnetic waves in the 1880s.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What frequency is A440?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p><strong>A440</strong> refers to the musical note A above middle C, vibrating at exactly 440 Hz. It has been the international standard for concert pitch since 1955 (ISO 16).</p>
+                <p>Orchestras and instruments are tuned so that A4 equals 440 Hz. From this reference, all other notes are calculated using equal temperament (each semitone is a factor of 2^(1/12) apart).</p>
+                <p>Some musicians prefer alternative tunings:<br>
+                - 432 Hz ("Verdi pitch") - some claim it sounds more natural<br>
+                - 442-443 Hz - common in European orchestras for brighter sound<br>
+                - 415 Hz - Baroque pitch, used for period-instrument performances</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What is the relationship between frequency and musical pitch?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>The relationship is <strong>logarithmic</strong>. Doubling the frequency raises the pitch by exactly one octave. So A4 (440 Hz) and A5 (880 Hz) are one octave apart - they sound like "the same note" at different heights.</p>
+                <p>In equal temperament tuning, each semitone is the 12th root of 2 (approximately 1.0595) times the previous note. The formula is:</p>
+                <p><code>f = 440 x 2^(n/12)</code></p>
+                <p>Where f is frequency and n is the number of semitones from A4.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What is the difference between sine, square, sawtooth, and triangle waves?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p><strong>Sine waves</strong> are pure tones containing only the fundamental frequency - smooth and mellow sounding. They're the building blocks of all other sounds.</p>
+                <p><strong>Square waves</strong> contain odd harmonics (3rd, 5th, 7th, etc.), creating a hollow, buzzy quality. They sound more aggressive and penetrating.</p>
+                <p><strong>Sawtooth waves</strong> contain all harmonics (both odd and even), creating the brightest, most complex timbre. They sound rich and slightly harsh.</p>
+                <p><strong>Triangle waves</strong> are similar to sine but with subtle odd harmonics - warmer than sine but softer than square.</p>
+                <p>Sine waves are preferred for hearing tests and precise frequency work. Other waveforms are useful for testing harmonic response and speaker distortion.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hearing Questions -->
+    <section class="faq-section">
+        <h2>Hearing & Perception</h2>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What is the human hearing range?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>The theoretical human hearing range is <strong>20 Hz to 20,000 Hz</strong>. However, most adults cannot hear the full range:</p>
+                <p>- <strong>Under 25:</strong> May hear up to 17,000-20,000 Hz<br>
+                - <strong>25-35:</strong> Typically up to 15,000-17,000 Hz<br>
+                - <strong>35-50:</strong> Typically up to 12,000-15,000 Hz<br>
+                - <strong>Over 50:</strong> Often limited to 8,000-12,000 Hz</p>
+                <p>Low-frequency hearing typically remains stable throughout life. High-frequency loss (presbycusis) is a normal part of aging and can be accelerated by noise exposure.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Why can't I hear very low frequencies?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Several factors affect low-frequency perception:</p>
+                <p><strong>Equipment limitations:</strong> Most laptop and phone speakers cannot reproduce frequencies below 80-150 Hz. Small headphones and earbuds have limited bass extension.</p>
+                <p><strong>Room acoustics:</strong> Standing waves create bass nulls at certain positions. Try moving your head or changing listening position.</p>
+                <p><strong>Hearing sensitivity:</strong> Human hearing is less sensitive at frequency extremes (Fletcher-Munson curves). Very low frequencies require more volume to be perceived at the same loudness.</p>
+                <p><strong>Solution:</strong> Use quality over-ear headphones or full-range speakers with a subwoofer for accurate low-frequency testing.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Can I test my hearing with this tool?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>This tool provides <strong>rough self-assessment only</strong>, not clinical hearing testing. Without calibrated equipment and controlled conditions, absolute thresholds cannot be determined.</p>
+                <p>However, you can use this tool to:</p>
+                <p>- Compare left vs. right ear sensitivity<br>
+                - Track relative changes over time (with consistent equipment/settings)<br>
+                - Identify your approximate high-frequency limit<br>
+                - Screen for potential issues that warrant professional evaluation</p>
+                <p><strong>For accurate hearing assessment, see a licensed audiologist.</strong> Clinical audiometry uses calibrated equipment in sound-treated rooms with standardized protocols.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What is tinnitus?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p><strong>Tinnitus</strong> is the perception of sound when no external sound is present. It's commonly described as ringing, buzzing, hissing, or humming in the ears.</p>
+                <p>Most tinnitus occurs in the 2,000-8,000 Hz range, often correlating with frequencies where hearing loss has occurred. Current research suggests tinnitus may result from the brain "turning up the gain" to compensate for reduced input from damaged hair cells.</p>
+                <p>The tinnitus frequency matcher on this site can help identify your tinnitus frequency for masking or notched sound therapy purposes. However, always consult an audiologist for proper diagnosis and treatment.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Why do some frequencies sound louder than others at the same volume?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Human hearing sensitivity varies across frequencies - this is described by the <strong>Fletcher-Munson curves</strong> (or equal-loudness contours, ISO 226).</p>
+                <p>We are most sensitive to frequencies around <strong>2,000-5,000 Hz</strong> (the speech range), and less sensitive at very low and very high frequencies. A 30 Hz tone must be about 60 dB louder than a 3,000 Hz tone to sound equally loud!</p>
+                <p>This is why bass frequencies require more power, and why headphones often have bass boost - to compensate for our reduced sensitivity at low frequencies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Questions -->
+    <section class="faq-section">
+        <h2>Technical Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What is the difference between linear and logarithmic frequency sweeps?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p><strong>Linear sweeps</strong> change frequency at a constant rate (e.g., 100 Hz per second). A sweep from 20 Hz to 20,000 Hz takes equal time to go from 20-100 Hz as from 10,000-10,080 Hz. This means more time is spent in higher octaves.</p>
+                <p><strong>Logarithmic sweeps</strong> change frequency exponentially, spending equal time in each octave. Going from 100-200 Hz (one octave) takes the same time as 1,000-2,000 Hz (one octave).</p>
+                <p>Logarithmic sweeps better match human hearing perception (which is logarithmic) and are preferred for room acoustics measurement. Linear sweeps are useful when you need consistent Hz-resolution across the spectrum.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What is the difference between white, pink, and brown noise?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p><strong>White noise</strong> has equal energy at all frequencies. It sounds "bright" or "hissy" because higher frequencies are perceived as louder. Spectrum is flat when measured in linear Hz.</p>
+                <p><strong>Pink noise</strong> has equal energy per octave (falls off at 3 dB/octave). It sounds more balanced and natural to human ears. Spectrum is flat when measured in octave bands. Preferred for speaker calibration and room acoustics.</p>
+                <p><strong>Brown noise</strong> (also called red noise) falls off at 6 dB/octave, emphasizing low frequencies. It has a deep, rumbling quality like thunder or a waterfall. Popular for relaxation and sleep.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>How does the Web Audio API generate these sounds?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>This tool uses the <strong>Web Audio API</strong> built into modern browsers to synthesize sounds in real-time. No audio files are downloaded - everything is generated mathematically.</p>
+                <p>Key components include:</p>
+                <p>- <strong>OscillatorNode:</strong> Generates basic waveforms (sine, square, sawtooth, triangle) at specified frequencies<br>
+                - <strong>GainNode:</strong> Controls volume<br>
+                - <strong>ChannelSplitterNode/ChannelMergerNode:</strong> Enables left/right channel selection<br>
+                - <strong>AnalyserNode:</strong> Provides FFT data for visualization</p>
+                <p>For noise generation, random sample values are generated and filtered to create the appropriate spectral shape.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Why is 0.1 Hz precision important?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Fine frequency resolution matters for several applications:</p>
+                <p><strong>Musical tuning:</strong> The difference between A440 and A442 (used by some European orchestras) is only 2 Hz. Accurate tuning requires at least 1 Hz resolution.</p>
+                <p><strong>Tinnitus matching:</strong> Tinnitus often has a specific pitch. Precise matching helps with targeted masking and notched sound therapy.</p>
+                <p><strong>Beating effects:</strong> When two close frequencies sound together, you hear "beats" at the difference frequency. Generating 440 Hz and 442 Hz creates 2 Hz beating - requires fine control.</p>
+                <p><strong>Calibration:</strong> Professional audio calibration often uses specific frequencies (1000.0 Hz, not "approximately 1k").</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Questions -->
+    <section class="faq-section">
+        <h2>Safety & Best Practices</h2>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Is it safe to listen to test tones?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Test tones are safe at <strong>moderate volumes for reasonable durations</strong>. Follow the same guidelines as for any audio:</p>
+                <p>- Keep volume below 85 dB for extended listening<br>
+                - Take breaks every 60 minutes<br>
+                - Never use high volumes with headphones<br>
+                - Start at low volume and increase gradually</p>
+                <p><strong>Special considerations:</strong></p>
+                <p>- Very low frequencies (below 20 Hz) at high volumes can cause disorientation<br>
+                - High frequencies can be perceived as louder and more irritating<br>
+                - Pure tones are more fatiguing than complex sounds like music</p>
+                <p>If you experience ringing, muffled hearing, or discomfort, reduce volume immediately.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Can test tones damage my speakers?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>At normal listening levels, test tones will not damage speakers. However, exercise caution with:</p>
+                <p><strong>Very low frequencies:</strong> Frequencies below your speaker's rated range can cause excessive excursion (cone movement), potentially damaging the driver. Don't play 20 Hz through small speakers at high volume.</p>
+                <p><strong>High power + clipping:</strong> If you drive an amplifier into clipping (distortion), the resulting waveform contains more high-frequency energy than a pure tone, potentially damaging tweeters.</p>
+                <p><strong>Resonance frequencies:</strong> If you hit a speaker or cabinet resonance, the resulting buildup can be louder than expected. Sweep slowly and listen for resonances.</p>
+                <p><strong>Best practice:</strong> Start at low volume, increase gradually, and watch for distortion or unusual sounds.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>How loud is too loud?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>NIOSH (National Institute for Occupational Safety and Health) provides these guidelines:</p>
+                <p>- <strong>85 dB:</strong> Safe for 8 hours (busy traffic, loud restaurant)<br>
+                - <strong>88 dB:</strong> Safe for 4 hours<br>
+                - <strong>91 dB:</strong> Safe for 2 hours<br>
+                - <strong>94 dB:</strong> Safe for 1 hour (nightclub, loud headphones)<br>
+                - <strong>97 dB:</strong> Safe for 30 minutes<br>
+                - <strong>100 dB:</strong> Safe for 15 minutes</p>
+                <p>For every 3 dB increase, safe exposure time is cut in half.</p>
+                <p><strong>Rule of thumb:</strong> If you need to raise your voice to be heard over the sound, it's likely above 85 dB and could cause damage with prolonged exposure.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Should I use headphones or speakers for testing?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Both have advantages depending on your purpose:</p>
+                <p><strong>Headphones are better for:</strong></p>
+                <p>- Hearing tests (isolates each ear, removes room influence)<br>
+                - Checking for left/right balance<br>
+                - Detailed frequency response listening<br>
+                - Late-night testing without disturbing others</p>
+                <p><strong>Speakers are better for:</strong></p>
+                <p>- Room acoustics analysis<br>
+                - Testing speaker performance<br>
+                - Subwoofer integration<br>
+                - More natural listening (sounds comes from outside the head)</p>
+                <p>For hearing tests, circumaural (over-ear) headphones provide the most consistent results. For speaker testing, obviously use the speakers you want to test.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Healing Frequency Questions -->
+    <section class="faq-section">
+        <h2>Healing Frequencies & Claims</h2>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What is 432 Hz tuning?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p><strong>432 Hz tuning</strong> (sometimes called "Verdi pitch" after Giuseppe Verdi who advocated for it) means tuning A4 to 432 Hz instead of the standard 440 Hz.</p>
+                <p>Claims about 432 Hz include that it's more "natural," mathematically superior, or has healing properties. The evidence for these claims is weak:</p>
+                <p>- Blind listening tests show most people cannot distinguish 432 Hz from 440 Hz tuning<br>
+                - Mathematical "sacred geometry" claims are numerological, not scientific<br>
+                - No peer-reviewed research supports specific health benefits</p>
+                <p>That said, if you prefer the sound of 432 Hz tuning, there's no harm in using it. The difference is subtle (about a quarter-tone lower).</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What are Solfeggio frequencies?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>The "Solfeggio frequencies" are a set of tones (174, 285, 396, 417, 528, 639, 741, 852, 963 Hz) claimed to have healing properties.</p>
+                <p><strong>Important context:</strong> Despite marketing claims, these are not ancient. They were introduced in the 1990s, derived from numerological calculations on Bible verses. The original medieval solfege system (Do, Re, Mi...) had no specific Hz values - it was a system for teaching relative pitch.</p>
+                <p>No peer-reviewed research supports the specific claims made about these frequencies. However, any pleasant, sustained tone can support relaxation and meditation. If you find these frequencies helpful, the benefit may come from the act of focused listening rather than the specific Hz values.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Can sound frequencies heal or repair DNA?</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p><strong>No.</strong> There is no credible scientific evidence that audible sound frequencies can repair DNA or heal specific conditions.</p>
+                <p>Sound waves in air cannot directly interact with molecular structures like DNA - the physics simply don't allow it. DNA operates at the molecular scale; sound waves are macro-scale pressure variations.</p>
+                <p>That said, sound and music do have documented psychological and physiological effects: reducing stress, lowering blood pressure, improving mood, and supporting meditation. These are real benefits, but they come from the general properties of pleasant sound and focused listening, not from specific "healing frequencies."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cross-links -->
+    <div class="cross-links">
+        <a href="/science" class="cross-link-card">
+            <i class="ri-flask-line"></i>
+            <div class="link-content">
+                <h4>Science & Research</h4>
+                <p>Hearing physiology and audiometric standards</p>
+            </div>
+        </a>
+        <a href="/applications" class="cross-link-card">
+            <i class="ri-tools-line"></i>
+            <div class="link-content">
+                <h4>Practical Applications</h4>
+                <p>Speaker testing, calibration, audiometry</p>
+            </div>
+        </a>
+        <a href="/traditions" class="cross-link-card">
+            <i class="ri-ancient-gate-line"></i>
+            <div class="link-content">
+                <h4>Sound & Spirituality</h4>
+                <p>Frequency traditions and contemplative practice</p>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

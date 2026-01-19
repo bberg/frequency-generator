@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TestTones - Professional Audio Test Tone Generator{% endblock %}</title>
+    <meta name="description" content="{% block description %}Free online test tone generator with ultra-precise control (0.1Hz resolution). Professional audio calibration, hearing tests, speaker testing, and frequency analysis tools.{% endblock %}">
+    {% block meta_extra %}{% endblock %}
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5G9K2M61GZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5G9K2M61GZ');
+    </script>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <div class="header-content">
+                <h1><a href="/" style="color: inherit; text-decoration: none;">TestTones</a></h1>
+                <p class="tagline">{% block tagline %}Professional audio test tones for calibration & testing{% endblock %}</p>
+            </div>
+        </header>
+
+        <nav class="mini-nav">
+            <a href="/#generator" class="nav-link"><i class="ri-sound-module-line"></i> Generator</a>
+            <a href="/#sweep" class="nav-link"><i class="ri-line-chart-line"></i> Sweep</a>
+            <a href="/#speaker-test" class="nav-link"><i class="ri-speaker-3-line"></i> Speaker Test</a>
+            <a href="/#hearing-test" class="nav-link"><i class="ri-ear-line"></i> Hearing Test</a>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-link dropdown-trigger {% if active_page in ['science', 'applications', 'traditions', 'faq'] %}active{% endif %}"><i class="ri-information-line"></i> Info <i class="ri-arrow-down-s-line dropdown-arrow"></i></a>
+                <div class="dropdown-menu">
+                    <a href="/science" {% if active_page == 'science' %}class="active"{% endif %}><i class="ri-flask-line"></i> Science & Research</a>
+                    <a href="/applications" {% if active_page == 'applications' %}class="active"{% endif %}><i class="ri-tools-line"></i> Practical Applications</a>
+                    <a href="/traditions" {% if active_page == 'traditions' %}class="active"{% endif %}><i class="ri-ancient-gate-line"></i> Sound & Spirituality</a>
+                    <a href="/faq" {% if active_page == 'faq' %}class="active"{% endif %}><i class="ri-question-answer-line"></i> FAQ</a>
+                </div>
+            </div>
+        </nav>
+
+        {% block content %}{% endblock %}
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">TestTones</span>
+                    <p>Free online precision test tone generator for audio calibration, hearing tests, and professional audio testing.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Learn More</h4>
+                    <a href="/science">Science & Research</a>
+                    <a href="/applications">Practical Applications</a>
+                    <a href="/traditions">Sound & Spirituality</a>
+                    <a href="/faq">FAQ</a>
+                </div>
+                <div class="footer-related">
+                    <h4>Related Tools</h4>
+                    <a href="https://sirengenerator.com" target="_blank">Siren Generator</a>
+                    <a href="https://focushum.com" target="_blank">Noise Generator</a>
+                    <a href="https://tonesynth.com" target="_blank">Tone Generator</a>
+                    <a href="https://binauralhq.com" target="_blank">Binaural Beats</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Part of the Audio Tools Network. For educational and personal use.</p>
+            </div>
+        </footer>
+    </div>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>
