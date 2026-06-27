@@ -47,6 +47,24 @@
       }
     }
     </script>
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TestTones",
+      "url": "https://testtones.com",
+      "logo": "https://testtones.com/static/images/og-image.png",
+      "sameAs": [
+        "https://sirengenerator.com",
+        "https://tonesynth.com",
+        "https://focushum.com",
+        "https://binauralhq.com",
+        "https://omtones.com",
+        "https://metronomely.com"
+      ]
+    }
+    </script>
     {% block head_extra %}{% endblock %}
 </head>
 <body>
@@ -64,22 +82,22 @@
             <a href="/#speaker-test" class="nav-link"><i class="ri-speaker-3-line"></i> Speaker Test</a>
             <a href="/#hearing-test" class="nav-link"><i class="ri-ear-line"></i> Hearing Test</a>
             <div class="nav-dropdown">
-                <a href="#" class="nav-link dropdown-trigger {% if active_page in ['for-speaker-testing', 'for-subwoofer-testing', 'for-hearing-test', 'for-tinnitus', 'for-car-audio'] %}active{% endif %}"><i class="ri-list-check-2"></i> Use Cases <i class="ri-arrow-down-s-line dropdown-arrow"></i></a>
+                <a href="#" class="nav-link dropdown-trigger {% if active_page|default('') in ['for-speaker-testing', 'for-subwoofer-testing', 'for-hearing-test', 'for-tinnitus', 'for-car-audio'] %}active{% endif %}"><i class="ri-list-check-2"></i> Use Cases <i class="ri-arrow-down-s-line dropdown-arrow"></i></a>
                 <div class="dropdown-menu">
-                    <a href="/for-speaker-testing" {% if active_page == 'for-speaker-testing' %}class="active"{% endif %}><i class="ri-speaker-3-line"></i> Speaker & Headphone Testing</a>
-                    <a href="/for-subwoofer-testing" {% if active_page == 'for-subwoofer-testing' %}class="active"{% endif %}><i class="ri-volume-vibrate-line"></i> Subwoofer & Bass Testing</a>
-                    <a href="/for-hearing-test" {% if active_page == 'for-hearing-test' %}class="active"{% endif %}><i class="ri-ear-line"></i> Hearing Range Test</a>
-                    <a href="/for-tinnitus" {% if active_page == 'for-tinnitus' %}class="active"{% endif %}><i class="ri-pulse-line"></i> Tinnitus Frequency Matching</a>
-                    <a href="/for-car-audio" {% if active_page == 'for-car-audio' %}class="active"{% endif %}><i class="ri-car-line"></i> Car Audio Tuning</a>
+                    <a href="/for-speaker-testing" {% if active_page|default('') == 'for-speaker-testing' %}class="active"{% endif %}><i class="ri-speaker-3-line"></i> Speaker & Headphone Testing</a>
+                    <a href="/for-subwoofer-testing" {% if active_page|default('') == 'for-subwoofer-testing' %}class="active"{% endif %}><i class="ri-volume-vibrate-line"></i> Subwoofer & Bass Testing</a>
+                    <a href="/for-hearing-test" {% if active_page|default('') == 'for-hearing-test' %}class="active"{% endif %}><i class="ri-ear-line"></i> Hearing Range Test</a>
+                    <a href="/for-tinnitus" {% if active_page|default('') == 'for-tinnitus' %}class="active"{% endif %}><i class="ri-pulse-line"></i> Tinnitus Frequency Matching</a>
+                    <a href="/for-car-audio" {% if active_page|default('') == 'for-car-audio' %}class="active"{% endif %}><i class="ri-car-line"></i> Car Audio Tuning</a>
                 </div>
             </div>
             <div class="nav-dropdown">
-                <a href="#" class="nav-link dropdown-trigger {% if active_page in ['science', 'applications', 'traditions', 'faq'] %}active{% endif %}"><i class="ri-information-line"></i> Info <i class="ri-arrow-down-s-line dropdown-arrow"></i></a>
+                <a href="#" class="nav-link dropdown-trigger {% if active_page|default('') in ['science', 'applications', 'traditions', 'faq'] %}active{% endif %}"><i class="ri-information-line"></i> Info <i class="ri-arrow-down-s-line dropdown-arrow"></i></a>
                 <div class="dropdown-menu">
-                    <a href="/science" {% if active_page == 'science' %}class="active"{% endif %}><i class="ri-flask-line"></i> Science & Research</a>
-                    <a href="/applications" {% if active_page == 'applications' %}class="active"{% endif %}><i class="ri-tools-line"></i> Practical Applications</a>
-                    <a href="/traditions" {% if active_page == 'traditions' %}class="active"{% endif %}><i class="ri-ancient-gate-line"></i> Sound & Spirituality</a>
-                    <a href="/faq" {% if active_page == 'faq' %}class="active"{% endif %}><i class="ri-question-answer-line"></i> FAQ</a>
+                    <a href="/science" {% if active_page|default('') == 'science' %}class="active"{% endif %}><i class="ri-flask-line"></i> Science & Research</a>
+                    <a href="/applications" {% if active_page|default('') == 'applications' %}class="active"{% endif %}><i class="ri-tools-line"></i> Practical Applications</a>
+                    <a href="/traditions" {% if active_page|default('') == 'traditions' %}class="active"{% endif %}><i class="ri-ancient-gate-line"></i> Sound & Spirituality</a>
+                    <a href="/faq" {% if active_page|default('') == 'faq' %}class="active"{% endif %}><i class="ri-question-answer-line"></i> FAQ</a>
                 </div>
             </div>
         </nav>
@@ -87,18 +105,21 @@
         {% block content %}{% endblock %}
 
         <!-- Tasteful Ad Placement -->
+        {% set AD_SLOT = AD_SLOT|default("XXXXXXXXXX") %}
+        {% if AD_SLOT != "XXXXXXXXXX" %}
         <aside class="ad-section">
             <div class="ad-container">
                 <!-- Google AdSense Ad Unit - Replace data-ad-slot with your ad unit ID -->
                 <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="ca-pub-5035585454948958"
-                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-slot="{{ AD_SLOT }}"
                      data-ad-format="auto"
                      data-full-width-responsive="true"></ins>
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
         </aside>
+        {% endif %}
 
         <footer class="site-footer">
             <div class="footer-content">
@@ -137,6 +158,25 @@
             </div>
         </footer>
     </div>
+
+    <script>
+    (function () {
+      var u = encodeURIComponent(location.href), t = encodeURIComponent(document.title);
+      document.querySelectorAll('.share-btn[data-share]').forEach(function (b) {
+        var k = b.getAttribute('data-share');
+        if (k === 'x') b.href = 'https://twitter.com/intent/tweet?url=' + u + '&text=' + t;
+        else if (k === 'facebook') b.href = 'https://www.facebook.com/sharer/sharer.php?u=' + u;
+        else if (k === 'reddit') b.href = 'https://www.reddit.com/submit?url=' + u + '&title=' + t;
+        else if (k === 'copy') b.addEventListener('click', function () {
+          if (!navigator.clipboard) return; try {
+          navigator.clipboard.writeText(location.href).then(function () {
+            var o = b.innerHTML; b.innerHTML = '<i class="ri-check-line" aria-hidden="true"></i> Copied';
+            setTimeout(function () { b.innerHTML = o; }, 1500);
+          }).catch(function(){}); } catch (e) {}
+        });
+      });
+    })();
+    </script>
 
     {% block scripts %}{% endblock %}
 </body>

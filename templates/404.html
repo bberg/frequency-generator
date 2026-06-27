@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found (404) | TestTones{% endblock %}
+
+{% block description %}Sorry, the page you were looking for could not be found. Explore TestTones for free audio test tones, speaker tests, and hearing range checks.{% endblock %}
+
+{% block meta_extra %}
+<meta name="robots" content="noindex, follow">
+{% endblock %}
+
+{% block content %}
+<main class="error-page" style="text-align: center; padding: 4rem 1rem; max-width: 640px; margin: 0 auto;">
+    <p style="font-size: 4rem; font-weight: 800; margin: 0; color: var(--accent, #4f8cff);">404</p>
+    <h1 style="margin: 0.5rem 0 1rem;">Page Not Found</h1>
+    <p style="font-size: 1.1rem; opacity: 0.85;">The page you were looking for does not exist or may have moved. Let's get you back to making some tones.</p>
+    <p style="margin-top: 2rem;">
+        <a href="/" class="nav-link" style="font-weight: 600;"><i class="ri-home-4-line"></i> Back to the Tone Generator</a>
+    </p>
+    <div style="margin-top: 2.5rem;">
+        <h2 style="font-size: 1.1rem;">Popular pages</h2>
+        <ul style="list-style: none; padding: 0; line-height: 2;">
+            <li><a href="/for-speaker-testing">Speaker &amp; Headphone Testing</a></li>
+            <li><a href="/for-subwoofer-testing">Subwoofer &amp; Bass Testing</a></li>
+            <li><a href="/for-hearing-test">Hearing Range Test</a></li>
+            <li><a href="/for-tinnitus">Tinnitus Frequency Matching</a></li>
+            <li><a href="/for-car-audio">Car Audio Tuning</a></li>
+            <li><a href="/faq">Frequently Asked Questions</a></li>
+        </ul>
+    </div>
+</main>
+{% endblock %}

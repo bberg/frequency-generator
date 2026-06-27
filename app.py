@@ -45,6 +45,10 @@ def for_tinnitus():
 def for_car_audio():
     return render_template('for-car-audio.html', active_page='for-car-audio')
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
@@ -72,55 +76,55 @@ def sitemap():
     <url>
         <loc>https://testtones.com/science</loc>
         <lastmod>{today}</lastmod>
-        <priority>0.9</priority>
+        <priority>0.7</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://testtones.com/applications</loc>
         <lastmod>{today}</lastmod>
-        <priority>0.9</priority>
+        <priority>0.7</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://testtones.com/traditions</loc>
         <lastmod>{today}</lastmod>
-        <priority>0.9</priority>
+        <priority>0.7</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://testtones.com/faq</loc>
         <lastmod>{today}</lastmod>
-        <priority>0.9</priority>
+        <priority>0.7</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://testtones.com/for-speaker-testing</loc>
         <lastmod>{today}</lastmod>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://testtones.com/for-subwoofer-testing</loc>
         <lastmod>{today}</lastmod>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://testtones.com/for-hearing-test</loc>
         <lastmod>{today}</lastmod>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://testtones.com/for-tinnitus</loc>
         <lastmod>{today}</lastmod>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://testtones.com/for-car-audio</loc>
         <lastmod>{today}</lastmod>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
 </urlset>'''
