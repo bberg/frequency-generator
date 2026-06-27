@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}About TestTones - The Browser Test Tone Generator | TestTones{% endblock %}
+
+{% block description %}TestTones is a free, precise test tone generator that runs in your browser. Learn why we built it and how it helps you calibrate speakers, subwoofers, and check your hearing range.{% endblock %}
+
+{% block meta_extra %}
+<meta property="og:title" content="About TestTones">
+<meta property="og:description" content="A free, browser-based test tone generator for speaker, subwoofer, and hearing checks.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://testtones.com/about">
+{% endblock %}
+
+{% block content %}
+<section class="content-section" id="about">
+    <article class="content-article">
+        <h1>About TestTones</h1>
+
+        <p class="intro-text">TestTones started with a simple frustration: every time we wanted to check whether a subwoofer was actually reaching 30 Hz, confirm a tweeter wasn't wired out of phase, or find out how high our ears could still hear, the options were clunky desktop apps, sketchy downloads, or YouTube clips compressed into uselessness. We wanted a clean, accurate signal source that just opened in a browser and worked.</p>
+
+        <p>So we built one. TestTones is a free online test tone generator that produces pure sine, square, triangle, and sawtooth waves with 0.1 Hz precision, plus frequency sweeps, left/right channel checks, and white and pink noise. Everything is generated live by the Web Audio API on your own device, which means the tones are mathematically exact rather than re-encoded audio files, and nothing about your listening is uploaded or stored.</p>
+
+        <h2>Who it's for</h2>
+        <p>TestTones is built for anyone who needs a trustworthy reference signal. Home theater owners use it to dial in subwoofer crossover points and hunt down rattles. Car audio installers sweep their doors and trunks to find resonance. Headphone enthusiasts run channel-balance and burn-in tones. Musicians and producers tune to A440 or check a room for standing waves. And plenty of people simply want to find the top of their own hearing range, which naturally drops with age. You don't need to be an engineer to use it, but the precision is there if you are one.</p>
+
+        <h2>What makes it good</h2>
+        <p>It's genuinely free, with no account, no app install, and no paywall hiding the useful frequencies. It works on phones, tablets, and laptops. The interface shows you exactly what frequency and waveform you're playing, and dedicated guides walk you through <a href="/for-speaker-testing">speaker and headphone testing</a>, <a href="/for-subwoofer-testing">subwoofer and bass testing</a>, and <a href="/for-hearing-test">checking your hearing range</a>. We keep the science <a href="/science">honest</a>: a tone generator is a measurement and calibration tool, not a medical device or a cure for anything.</p>
+
+        <h2>Part of the Audio Tools Network</h2>
+        <p>TestTones is one of a small family of focused, single-purpose audio tools called the Audio Tools Network. If you need something different, you might like <a href="https://tonesynth.com" target="_blank" rel="noopener">ToneSynth</a> for shaping richer tones, <a href="https://binauralhq.com" target="_blank" rel="noopener">BinauralHQ</a> for binaural beats, or <a href="https://burninheadphones.com" target="_blank" rel="noopener">Headphone Burn-In</a> for conditioning new headphones. Each one does a single job and does it well.</p>
+
+        <p>Have an idea, a bug report, or a feature you wish existed? We'd love to hear it — head to our <a href="/contact">contact page</a> and get in touch.</p>
+    </article>
+</section>
+{% endblock %}
