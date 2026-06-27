@@ -25,6 +25,26 @@ def traditions():
 def faq():
     return render_template('faq.html', active_page='faq')
 
+@app.route('/for-speaker-testing')
+def for_speaker_testing():
+    return render_template('for-speaker-testing.html', active_page='for-speaker-testing')
+
+@app.route('/for-subwoofer-testing')
+def for_subwoofer_testing():
+    return render_template('for-subwoofer-testing.html', active_page='for-subwoofer-testing')
+
+@app.route('/for-hearing-test')
+def for_hearing_test():
+    return render_template('for-hearing-test.html', active_page='for-hearing-test')
+
+@app.route('/for-tinnitus')
+def for_tinnitus():
+    return render_template('for-tinnitus.html', active_page='for-tinnitus')
+
+@app.route('/for-car-audio')
+def for_car_audio():
+    return render_template('for-car-audio.html', active_page='for-car-audio')
+
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
@@ -69,6 +89,36 @@ def sitemap():
     </url>
     <url>
         <loc>https://testtones.com/faq</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.9</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://testtones.com/for-speaker-testing</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.9</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://testtones.com/for-subwoofer-testing</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.9</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://testtones.com/for-hearing-test</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.9</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://testtones.com/for-tinnitus</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.9</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://testtones.com/for-car-audio</loc>
         <lastmod>{today}</lastmod>
         <priority>0.9</priority>
         <changefreq>monthly</changefreq>

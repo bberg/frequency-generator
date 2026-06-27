@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}TestTones - Professional Audio Test Tone Generator{% endblock %}</title>
-    <meta name="description" content="{% block description %}Free online test tone generator with ultra-precise control (0.1Hz resolution). Professional audio calibration, hearing tests, speaker testing, and frequency analysis tools.{% endblock %}">
+    <title>{% block title %}Test Tone Generator - Free Speaker, Bass & Hearing Tests | TestTones{% endblock %}</title>
+    <meta name="description" content="{% block description %}Free online test tone generator with 0.1 Hz precision. Test speakers, subwoofers, and hearing range with sine sweeps, channel checks, and calibration tones.{% endblock %}">
     {% block meta_extra %}{% endblock %}
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5G9K2M61GZ"></script>
@@ -14,8 +14,12 @@
         gtag('js', new Date());
         gtag('config', 'G-5G9K2M61GZ');
     </script>
+    <!-- Performance: preconnect to third-party origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -49,7 +53,7 @@
     <div class="container">
         <header class="page-header">
             <div class="header-content">
-                <h1><a href="/" style="color: inherit; text-decoration: none;">TestTones</a></h1>
+                <p class="site-title"><a href="/" style="color: inherit; text-decoration: none;">TestTones</a></p>
                 <p class="tagline">{% block tagline %}Professional audio test tones for calibration & testing{% endblock %}</p>
             </div>
         </header>
@@ -59,6 +63,16 @@
             <a href="/#sweep" class="nav-link"><i class="ri-line-chart-line"></i> Sweep</a>
             <a href="/#speaker-test" class="nav-link"><i class="ri-speaker-3-line"></i> Speaker Test</a>
             <a href="/#hearing-test" class="nav-link"><i class="ri-ear-line"></i> Hearing Test</a>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-link dropdown-trigger {% if active_page in ['for-speaker-testing', 'for-subwoofer-testing', 'for-hearing-test', 'for-tinnitus', 'for-car-audio'] %}active{% endif %}"><i class="ri-list-check-2"></i> Use Cases <i class="ri-arrow-down-s-line dropdown-arrow"></i></a>
+                <div class="dropdown-menu">
+                    <a href="/for-speaker-testing" {% if active_page == 'for-speaker-testing' %}class="active"{% endif %}><i class="ri-speaker-3-line"></i> Speaker & Headphone Testing</a>
+                    <a href="/for-subwoofer-testing" {% if active_page == 'for-subwoofer-testing' %}class="active"{% endif %}><i class="ri-volume-vibrate-line"></i> Subwoofer & Bass Testing</a>
+                    <a href="/for-hearing-test" {% if active_page == 'for-hearing-test' %}class="active"{% endif %}><i class="ri-ear-line"></i> Hearing Range Test</a>
+                    <a href="/for-tinnitus" {% if active_page == 'for-tinnitus' %}class="active"{% endif %}><i class="ri-pulse-line"></i> Tinnitus Frequency Matching</a>
+                    <a href="/for-car-audio" {% if active_page == 'for-car-audio' %}class="active"{% endif %}><i class="ri-car-line"></i> Car Audio Tuning</a>
+                </div>
+            </div>
             <div class="nav-dropdown">
                 <a href="#" class="nav-link dropdown-trigger {% if active_page in ['science', 'applications', 'traditions', 'faq'] %}active{% endif %}"><i class="ri-information-line"></i> Info <i class="ri-arrow-down-s-line dropdown-arrow"></i></a>
                 <div class="dropdown-menu">
@@ -99,13 +113,22 @@
                     <a href="/traditions">Sound & Spirituality</a>
                     <a href="/faq">FAQ</a>
                 </div>
+                <div class="footer-links">
+                    <h4>Use Cases</h4>
+                    <a href="/for-speaker-testing">Speaker & Headphone Testing</a>
+                    <a href="/for-subwoofer-testing">Subwoofer & Bass Testing</a>
+                    <a href="/for-hearing-test">Hearing Range Test</a>
+                    <a href="/for-tinnitus">Tinnitus Frequency Matching</a>
+                    <a href="/for-car-audio">Car Audio Tuning</a>
+                </div>
                 <div class="footer-related">
                     <h4>Audio Tools Network</h4>
-                    <a href="https://focushum.com" target="_blank">Noise Generator</a>
-                    <a href="https://tonesynth.com" target="_blank">Tone Generator</a>
-                    <a href="https://binauralhq.com" target="_blank">Binaural Beats</a>
-                    <a href="https://omtones.com" target="_blank">Drone Generator</a>
-                    <a href="https://metronomely.com" target="_blank">Metronome</a>
+                    <a href="https://sirengenerator.com" target="_blank" rel="noopener">Siren Generator</a>
+                    <a href="https://tonesynth.com" target="_blank" rel="noopener">ToneSynth</a>
+                    <a href="https://focushum.com" target="_blank" rel="noopener">Focus Hum</a>
+                    <a href="https://binauralhq.com" target="_blank" rel="noopener">BinauralHQ</a>
+                    <a href="https://omtones.com" target="_blank" rel="noopener">OmTones</a>
+                    <a href="https://metronomely.com" target="_blank" rel="noopener">Metronomely</a>
                 </div>
             </div>
             <div class="footer-bottom">

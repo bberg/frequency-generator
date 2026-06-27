@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TestTones - Professional Audio Test Tone Generator for Calibration & Testing</title>
-    <meta name="description" content="Free online test tone generator with ultra-precise control (0.1Hz resolution). Professional audio calibration, hearing tests, speaker testing, and frequency analysis tools.">
+    <title>Test Tone Generator - Speaker, Bass & Hearing | TestTones</title>
+    <meta name="description" content="Free online test tone generator with 0.1 Hz precision. Test speakers, subwoofers, and hearing range with sine sweeps, channel checks, and calibration tones.">
     <meta name="keywords" content="test tones, audio test, tone generator, audio calibration, hearing test, 440Hz, sine wave, speaker test, frequency test">
 
     <!-- Canonical URL -->
@@ -43,6 +43,11 @@
     }
     </script>
 
+    <!-- Performance: preconnect to third-party origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -62,7 +67,7 @@
         <header class="page-header">
             <div class="header-content">
                 <h1>TestTones</h1>
-                <p class="tagline">Professional audio test tones for calibration & testing</p>
+                <p class="tagline">Free, precise test tones to check your speakers, subwoofer, and hearing range — right in your browser</p>
             </div>
             <div class="header-badges">
                 <span class="header-badge"><i class="ri-sound-module-line"></i> 0.1Hz Precision</span>
@@ -257,7 +262,7 @@
         <div class="controls speaker-test-section" id="speaker-test">
             <div class="control-group full-width">
                 <h3>Speaker & Headphone Testing</h3>
-                <p class="section-intro">Test your speakers or headphones for proper channel balance, polarity, and frequency response.</p>
+                <p class="section-intro">Test your speakers or headphones for proper channel balance, polarity, and frequency response. New to this? Follow our <a href="/for-speaker-testing">speaker and headphone testing guide</a>.</p>
 
                 <div class="test-cards">
                     <!-- Stereo Balance Test -->
@@ -308,7 +313,7 @@
                             <i class="ri-sound-module-line"></i>
                             <h4>Noise Generator</h4>
                         </div>
-                        <p>Use noise signals for speaker testing, room acoustics, and calibration.</p>
+                        <p>Use noise signals for speaker testing, room acoustics, and calibration. For continuous white and pink noise to focus, sleep, or mask distractions, try <a href="https://focushum.com" target="_blank" rel="noopener">FocusHum</a>.</p>
                         <div class="noise-buttons">
                             <button class="noise-btn" data-noise="pink" id="pinkNoiseBtn">
                                 <span class="noise-icon pink"></span> Pink Noise
@@ -340,7 +345,7 @@
                             <button class="bass-btn" data-freq="60">60 Hz</button>
                             <button class="bass-btn" data-freq="80">80 Hz</button>
                         </div>
-                        <p class="test-tip"><strong>Note:</strong> Many laptop speakers cannot reproduce frequencies below 100 Hz.</p>
+                        <p class="test-tip"><strong>Note:</strong> Many laptop speakers cannot reproduce frequencies below 100 Hz. See the <a href="/for-subwoofer-testing">subwoofer and bass testing guide</a> for checking extension and room modes.</p>
                     </div>
                 </div>
             </div>
@@ -352,7 +357,7 @@
                 <h3>Hearing Test</h3>
                 <div class="hearing-disclaimer">
                     <i class="ri-information-line"></i>
-                    <p><strong>Disclaimer:</strong> This is not a medical hearing test. It provides only a rough indication of your hearing range. For accurate assessment, consult an audiologist.</p>
+                    <p><strong>Disclaimer:</strong> This is not a medical hearing test. It provides only a rough indication of your hearing range. For accurate assessment, consult an audiologist. For a step-by-step walkthrough, see our <a href="/for-hearing-test">at-home hearing range test guide</a>.</p>
                 </div>
 
                 <div class="hearing-test-cards">
@@ -547,7 +552,7 @@
                 </div>
 
                 <h3>How Frequency Relates to Musical Pitch</h3>
-                <p>Musical notes correspond to specific frequencies. When we say "middle C," we mean a sound wave vibrating at 261.63 Hz. The relationship between frequency and pitch is logarithmic: doubling the frequency raises the pitch by exactly one octave. This is why A4 (440 Hz) and A5 (880 Hz) sound like the same note, just higher.</p>
+                <p>Musical notes correspond to specific frequencies. When we say "middle C," we mean a sound wave vibrating at 261.63 Hz. The relationship between frequency and pitch is logarithmic: doubling the frequency raises the pitch by exactly one octave. This is why A4 (440 Hz) and A5 (880 Hz) sound like the same note, just higher. To play pure musical tones by note name and build simple melodies, try <a href="https://tonesynth.com" target="_blank" rel="noopener">ToneSynth</a>.</p>
 
                 <div class="note-frequency-table">
                     <h4>Musical Notes and Their Frequencies (A4 = 440 Hz)</h4>
@@ -744,12 +749,20 @@
                     <a href="/traditions">Sound & Spirituality</a>
                     <a href="/faq">FAQ</a>
                 </div>
+                <div class="footer-links">
+                    <h4>Use Cases</h4>
+                    <a href="/for-speaker-testing">Speaker & Headphone Testing</a>
+                    <a href="/for-subwoofer-testing">Subwoofer & Bass Testing</a>
+                    <a href="/for-hearing-test">Hearing Range Test</a>
+                </div>
                 <div class="footer-related">
-                    <h4>Related Tools</h4>
-                    <a href="https://sirengenerator.com" target="_blank">Siren Generator</a>
-                    <a href="https://focushum.com" target="_blank">Noise Generator</a>
-                    <a href="https://tonesynth.com" target="_blank">Tone Generator</a>
-                    <a href="https://binauralhq.com" target="_blank">Binaural Beats</a>
+                    <h4>Audio Tools Network</h4>
+                    <a href="https://sirengenerator.com" target="_blank" rel="noopener">Siren Generator</a>
+                    <a href="https://tonesynth.com" target="_blank" rel="noopener">ToneSynth</a>
+                    <a href="https://focushum.com" target="_blank" rel="noopener">Focus Hum</a>
+                    <a href="https://binauralhq.com" target="_blank" rel="noopener">BinauralHQ</a>
+                    <a href="https://omtones.com" target="_blank" rel="noopener">OmTones</a>
+                    <a href="https://metronomely.com" target="_blank" rel="noopener">Metronomely</a>
                 </div>
             </div>
             <div class="footer-bottom">

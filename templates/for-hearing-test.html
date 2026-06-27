@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% block title %}Online Hearing Test - Check Your Range Free | TestTones{% endblock %}
+
+{% block description %}Test your hearing range at home with free pure tones. Find your high-frequency limit, compare your ears, and check audiometric frequencies in your browser.{% endblock %}
+
+{% block meta_extra %}
+<meta property="og:title" content="Online Hearing Test - Check Your Hearing Range Free">
+<meta property="og:description" content="Free at-home hearing test with pure tones. Find your high-frequency limit, compare left and right ears, and screen across audiometric frequencies.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://testtones.com/for-hearing-test">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Test Your Hearing Range at Home With Test Tones",
+  "description": "A practical guide to checking your hearing range with pure tones - finding your high-frequency limit, comparing ears, and screening audiometric frequencies, with proper caveats.",
+  "author": {"@type": "Organization", "name": "TestTones"},
+  "publisher": {"@type": "Organization", "name": "TestTones"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this a real hearing test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It's a self-screening. Real audiometry uses calibrated equipment in a sound-treated booth to measure your threshold in decibels at each frequency. This tool can show your approximate range and ear-to-ear differences, which is a useful prompt to seek a proper test - not a replacement for one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can I hear a high tone in one ear but not the other?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some left-right difference is normal, but a clear, repeatable gap can indicate asymmetric hearing loss or even something simple like earwax. If one ear is consistently worse across several frequencies, see a professional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I can't hear above 14,000 Hz. Should I worry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not on its own. High-frequency hearing declines with age and noise exposure, and losing the top octave is extremely common past your thirties. What matters more is whether you struggle with speech, which lives lower down around 250 to 4,000 Hz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do low tones seem quieter than mid tones at the same volume?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Human hearing is most sensitive around 2,000 to 5,000 Hz and less sensitive at the extremes - the equal-loudness (Fletcher-Munson) effect. A 30 Hz tone has to be much louder than a 3,000 Hz tone to seem equally loud, so don't read quiet bass as hearing loss."
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block tagline %}Pure tones for checking your hearing range{% endblock %}
+
+{% block content %}
+<div class="use-case-container">
+    <div class="use-case-hero">
+        <h1>Test your hearing range at home</h1>
+        <p class="hero-subtitle">Find the highest frequency you can hear, compare your left and right ears, and screen across audiometric frequencies - with honest tones and honest limits.</p>
+        <a href="/#hearing-test" class="cta-button"><i class="ri-play-circle-line" aria-hidden="true"></i> Open the hearing test</a>
+    </div>
+
+    <section class="use-case-section">
+        <h2>What an at-home hearing test can and can't tell you</h2>
+        <p>Your ears are most sensitive in the speech range and lose the top end first. As we age, the upper limit of hearing slowly drops - a normal process called presbycusis. A pure-tone test lets you hear roughly where your own ceiling sits and whether your two ears agree.</p>
+        <p><strong>This is a screening tool, not a medical exam.</strong> Without calibrated headphones and a quiet, sound-treated room, the test can't give true thresholds in decibels. What it can do is genuinely useful: estimate your high-frequency limit, compare one ear against the other, and flag anything worth taking to an audiologist. TestTones generates the tones in your browser, so there is nothing to install.</p>
+
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <i class="ri-user-heart-line" aria-hidden="true"></i>
+                <h3>Find your top limit</h3>
+                <p>The hearing age test rises in frequency until you stop hearing it, marking your high-frequency ceiling.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="ri-contrast-2-line" aria-hidden="true"></i>
+                <h3>Compare your ears</h3>
+                <p>Send tones to the left ear, then the right, and notice if one side is clearly weaker.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="ri-bar-chart-grouped-line" aria-hidden="true"></i>
+                <h3>Screen key frequencies</h3>
+                <p>Check the same 125 Hz to 8 kHz points used in real audiometric tests.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Set up for an accurate test</h2>
+        <ul class="tips-list">
+            <li><strong>Use good headphones:</strong> over-ear headphones isolate each ear and remove the room. Laptop and phone speakers can't reproduce the high or low extremes and will give misleading results.</li>
+            <li><strong>Find a quiet room:</strong> background noise masks soft tones, especially the high ones. Test where it's calm.</li>
+            <li><strong>Start with low volume:</strong> set the volume slider low before you begin and raise it only to a comfortable level. High tones can be sharp and tiring.</li>
+            <li><strong>Don't watch the numbers:</strong> for an honest result, look away from the frequency readout so you respond to what you actually hear, not what you expect.</li>
+            <li><strong>Test each ear:</strong> use the ear selector to check left and right separately - a difference between ears is more telling than the absolute numbers.</li>
+        </ul>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Three ways to test</h2>
+
+        <h3>1. Hearing age test (your high-frequency limit)</h3>
+        <p>In the hearing test section, start the <strong>hearing age test</strong>. It plays a tone that climbs in frequency; stop it the moment you can no longer hear anything, and note the value. As a rough guide, people under 25 often hear up to 17,000 to 20,000 Hz, those 35 to 45 up to around 12,000 to 15,000 Hz, and over 55 frequently top out near 8,000 to 10,000 Hz. These ranges overlap a lot, so treat your number as a ballpark.</p>
+
+        <h3>2. Audiometric frequencies (point by point)</h3>
+        <p>The <strong>audiometric frequencies</strong> card plays the standard test points - 125, 250, 500, 1,000, 2,000, 4,000, and 8,000 Hz - the same set clinics use. Pick "Both ears" first, then switch to "Left" and "Right" and tap through each frequency. You should hear every one clearly at a modest volume. A frequency that's much harder to hear in one ear is the kind of thing worth mentioning to a professional.</p>
+
+        <h3>3. Tinnitus frequency matcher</h3>
+        <p>If you have ringing in your ears, the <strong>tinnitus matcher</strong> lets you slide a tone until it lines up with the sound you hear, then use "Check octave" to confirm you didn't land an octave off - a common mistake. Knowing the frequency can help with masking and with describing your tinnitus to an audiologist. It is not a diagnosis.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Common questions</h2>
+
+        <h3>Is this a real hearing test?</h3>
+        <p>No. It's a self-screening. Real audiometry uses calibrated equipment in a sound-treated booth to measure your threshold in decibels at each frequency. This tool can show your approximate range and ear-to-ear differences, which is a useful prompt to seek a proper test - not a replacement for one.</p>
+
+        <h3>Why can I hear a high tone in one ear but not the other?</h3>
+        <p>Some left-right difference is normal, but a clear, repeatable gap can indicate asymmetric hearing loss or even something simple like earwax. If one ear is consistently worse across several frequencies, see a professional.</p>
+
+        <h3>I can't hear above 14,000 Hz. Should I worry?</h3>
+        <p>Not on its own. High-frequency hearing declines with age and noise exposure, and losing the top octave is extremely common past your thirties. What matters more is whether you struggle with speech, which lives lower down around 250 to 4,000 Hz.</p>
+
+        <h3>Why do low tones seem quieter than mid tones at the same volume?</h3>
+        <p>Human hearing is most sensitive around 2,000 to 5,000 Hz and less sensitive at the extremes - the equal-loudness (Fletcher-Munson) effect. A 30 Hz tone has to be much louder than a 3,000 Hz tone to seem equally loud, so don't read quiet bass as hearing loss.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Protect the hearing you have</h2>
+        <p>The most common preventable cause of hearing loss is loud sound over time. Keep test tones and music at a level where you don't need to raise your voice over them, take breaks during long listening, and use earplugs at concerts and loud venues. High-frequency loss doesn't grow back - so the goal of a test like this is awareness, not alarm.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Recommended gear</h2>
+        <div class="recommended-gear">
+            <p>A quiet, well-isolated pair of over-ear headphones makes self-testing far more consistent:</p>
+            <ul>
+                <li><a href="https://amazon.com/dp/B00HVLUR86?tag=audiotools20-20" target="_blank" rel="noopener">Audio-Technica ATH-M50x</a> — closed-back over-ear with flat, even response for repeatable results</li>
+                <li><a href="https://amazon.com/dp/B000AJIF4E?tag=audiotools20-20" target="_blank" rel="noopener">Beyerdynamic DT 770 Pro</a> — strong isolation that blocks room noise so soft tones stay audible</li>
+            </ul>
+            <p class="gear-note">Links may earn us a commission at no extra cost to you.</p>
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <h2>Ready to check your hearing?</h2>
+        <p>Open the free hearing test - high-frequency limit, audiometric points, and tinnitus matcher.</p>
+        <a href="/#hearing-test" class="cta-button"><i class="ri-play-circle-line" aria-hidden="true"></i> Start the hearing test</a>
+    </div>
+
+    <div class="cross-links">
+        <a href="/for-speaker-testing" class="cross-link-card">
+            <i class="ri-speaker-3-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Speaker & headphone testing</h4>
+                <p>Channel balance, polarity, and sweeps</p>
+            </div>
+        </a>
+        <a href="/for-subwoofer-testing" class="cross-link-card">
+            <i class="ri-volume-vibrate-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Subwoofer & bass testing</h4>
+                <p>Test 20-200 Hz, room modes, and rattles</p>
+            </div>
+        </a>
+        <a href="https://tonesynth.com" class="cross-link-card" target="_blank" rel="noopener">
+            <i class="ri-music-2-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>ToneSynth</h4>
+                <p>Pure tones and waveforms</p>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

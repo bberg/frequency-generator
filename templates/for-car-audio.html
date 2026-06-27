@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block title %}Car Audio Test Tones - Tune Subs & Gains | TestTones{% endblock %}
+
+{% block description %}Tune your car stereo with free test tones. Set amplifier gains, find rattles, and check subwoofer response from 20 Hz up - right from your phone's browser.{% endblock %}
+
+{% block meta_extra %}
+<meta property="og:title" content="Car Audio Test Tones - Tune Subs, Gains & Rattles">
+<meta property="og:description" content="Free test tones for tuning car audio. Set amp gains cleanly, hunt down rattles, and check how low your subwoofer plays - all from your phone's browser.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://testtones.com/for-car-audio">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Tune Car Audio With Test Tones",
+  "description": "A practical guide to tuning a car stereo and subwoofer with test tones - setting amplifier gains, finding rattles, checking sub extension, and using sweeps to spot resonances.",
+  "author": {"@type": "Organization", "name": "TestTones"},
+  "publisher": {"@type": "Organization", "name": "TestTones"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What frequency should I use to set my amplifier gain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use a tone near the middle of what that amp drives: 40 to 60 Hz for a subwoofer amp, and around 1,000 Hz for a midrange or full-range amp. Play the tone, turn the gain up until you just hear distortion, then back it off until it is clean. A tone is steadier than music, so the setting is more repeatable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will test tones damage my car speakers or sub?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only if you push them. Sustained tones at high volume put more continuous stress on a driver than music does, especially very low bass. Keep the level moderate, never hold a 20 to 30 Hz tone at full blast, and stop immediately if you hear chuffing, buzzing, or a strained sound."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I do this from my phone in the car?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. TestTones runs in your phone's browser, so you can play tones through the head unit over Bluetooth or a cable. For setting gains by ear, a clean wired connection is best because Bluetooth can add its own processing and a slight delay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How low should my car subwoofer play?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most car subs play strongly from about 30 to 80 Hz, and a good sealed install often stays clean down toward 25 Hz. Step a tone down from 80 Hz and listen for where output fades or turns into flapping. The car cabin actually boosts deep bass, so in-car extension can feel lower than the same sub at home."
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block tagline %}Test tones for tuning car stereos and subwoofers{% endblock %}
+
+{% block content %}
+<div class="use-case-container">
+    <div class="use-case-hero">
+        <h1>Tune your car audio with test tones</h1>
+        <p class="hero-subtitle">Set amplifier gains cleanly, track down the rattles in your doors and trunk, and check how low your subwoofer really plays - using precise tones straight from your phone.</p>
+        <a href="/#speaker-test" class="cta-button"><i class="ri-play-circle-line" aria-hidden="true"></i> Open the bass test</a>
+    </div>
+
+    <section class="use-case-section">
+        <h2>Why tones beat music for car tuning</h2>
+        <p>A car is a small, hard, oddly shaped space full of plastic panels - just about the hardest place to get clean sound. Music constantly changes pitch and level, so it hides exactly the problems you want to find. A steady test tone holds one frequency at one level, which makes a buzzing door panel obvious and makes setting a gain repeatable instead of a guess.</p>
+        <p><strong>TestTones runs in your phone's browser</strong> and plays pure sine tones down to 20 Hz with 0.1 Hz precision. The speaker test section has one-tap bass buttons for 20, 30, 40, 50, 60, and 80 Hz, the main generator covers everything up to 20 kHz, and the sweep moves smoothly across a range so you can hear the whole picture.</p>
+
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <i class="ri-equalizer-line" aria-hidden="true"></i>
+                <h3>Set gains cleanly</h3>
+                <p>Hold a steady tone to find where each amp starts to distort, then back off for a clean setting.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="ri-car-line" aria-hidden="true"></i>
+                <h3>Kill the rattles</h3>
+                <p>Creep a tone through the low bass and find the exact panel, trim, or plate that buzzes back.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="ri-volume-vibrate-line" aria-hidden="true"></i>
+                <h3>Check sub response</h3>
+                <p>Step down from 80 Hz toward 20 Hz to hear how deep your subwoofer plays in the cabin.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Setting amplifier gains by ear</h2>
+        <p>Gain is not a volume knob - it matches the amp's input to your head unit's output. Set it too high and the amp clips, which sounds harsh and is the most common way people cook a subwoofer. Test tones make this far safer than using a song.</p>
+        <ul class="tips-list">
+            <li><strong>Set the head unit first:</strong> turn the car's volume to about three-quarters of maximum with all bass boost, loudness, and EQ set flat. This is the loudest clean signal the amp will normally see.</li>
+            <li><strong>Pick the right tone:</strong> in the main generator, use about 40 to 60 Hz for a subwoofer amp and around 1,000 Hz for a midrange or full-range amp.</li>
+            <li><strong>Raise the gain slowly:</strong> with the tone playing, turn the amp gain up until you just hear distortion or a change in the tone's character, then back it down until it is clean again.</li>
+            <li><strong>Turn it back down:</strong> return the head unit to a normal listening level. You have set the ceiling, not the everyday volume.</li>
+            <li><strong>Repeat per amp:</strong> set each amplifier separately using a tone in its own range.</li>
+        </ul>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Finding rattles and checking the subwoofer</h2>
+
+        <h3>Hunt down rattles</h3>
+        <p>Door cards, trunk trim, license plates, and loose change all buzz at specific frequencies. Play a tone in the <strong>subwoofer / bass test</strong> card and use the <strong>+1 Hz and +0.1 Hz</strong> steps to creep slowly through 30 to 60 Hz. Most rattles peak at one exact frequency, so when the buzz appears, hold there and press on suspect panels until it stops - that is your culprit. Foam tape, a screw, or a clip usually fixes it.</p>
+
+        <h3>Check how low your sub plays</h3>
+        <p>Start at 80 Hz, which almost any car sub handles, and confirm a clean, steady tone. Then step down: 60, 50, 40, 30, and 20 Hz at a constant volume. Where the tone fades or turns into a soft flapping rather than a clear pitch is your practical low limit. Remember the cabin itself reinforces deep bass, so a car sub can feel like it reaches lower than the same driver would at home.</p>
+
+        <h3>Sweep for resonances</h3>
+        <p>In the <strong>sweep</strong> section, set the start to 20 Hz, the end to 200 Hz, choose <strong>logarithmic</strong>, and use a long duration of 30 to 60 seconds. Sit in the driver's seat and listen for notes that boom far louder than the rest or panels that start buzzing. A slow sweep is the fastest way to map every weak spot and rattle in one pass.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Common questions</h2>
+
+        <h3>What frequency should I use to set my amplifier gain?</h3>
+        <p>Use a tone near the middle of what that amp drives: 40 to 60 Hz for a subwoofer amp, and around 1,000 Hz for a midrange or full-range amp. Play the tone, turn the gain up until you just hear distortion, then back it off until it is clean. A tone is steadier than music, so the setting is more repeatable.</p>
+
+        <h3>Will test tones damage my car speakers or sub?</h3>
+        <p>Only if you push them. Sustained tones at high volume put more continuous stress on a driver than music does, especially very low bass. Keep the level moderate, never hold a 20 to 30 Hz tone at full blast, and stop immediately if you hear chuffing, buzzing, or a strained sound.</p>
+
+        <h3>Can I do this from my phone in the car?</h3>
+        <p>Yes. TestTones runs in your phone's browser, so you can play tones through the head unit over Bluetooth or a cable. For setting gains by ear, a clean wired connection is best because Bluetooth can add its own processing and a slight delay.</p>
+
+        <h3>How low should my car subwoofer play?</h3>
+        <p>Most car subs play strongly from about 30 to 80 Hz, and a good sealed install often stays clean down toward 25 Hz. Step a tone down from 80 Hz and listen for where output fades or turns into flapping. The car cabin actually boosts deep bass, so in-car extension can feel lower than the same sub at home.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Setting the subwoofer crossover and level</h2>
+        <p>Once gains are clean, blend the sub with your door speakers. Play an 80 Hz tone - the most common crossover point - and set the sub level so the bass supports the music rather than booming on its own. If bass feels thin everywhere, flip the sub's phase switch while a 50 to 80 Hz tone plays and keep whichever setting sounds fuller. Small adjustments here matter more than chasing maximum output.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Recommended gear</h2>
+        <div class="recommended-gear">
+            <p>A couple of inexpensive tools make car tuning more precise than ears alone:</p>
+            <ul>
+                <li><a href="https://amazon.com/dp/B0002E4Z8M?tag=audiotools20-20" target="_blank" rel="noopener">Galaxy Audio Check Mate</a> — SPL meter for level-matching the sub to your door speakers</li>
+                <li><a href="https://www.amazon.com/s?k=digital+multimeter+true+rms&tag=audiotools20-20" target="_blank" rel="noopener">Digital multimeter (true-RMS)</a> — for setting amp gains by AC voltage, the most accurate method</li>
+            </ul>
+            <p class="gear-note">Links may earn us a commission at no extra cost to you.</p>
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <h2>Ready to tune your system?</h2>
+        <p>Open the free bass test, sweep, and generator - set gains, kill rattles, and check your sub.</p>
+        <a href="/#speaker-test" class="cta-button"><i class="ri-play-circle-line" aria-hidden="true"></i> Start the bass test</a>
+    </div>
+
+    <div class="cross-links">
+        <a href="/for-subwoofer-testing" class="cross-link-card">
+            <i class="ri-volume-vibrate-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Subwoofer & bass testing</h4>
+                <p>Test 20-200 Hz, room modes, and rattles</p>
+            </div>
+        </a>
+        <a href="/for-speaker-testing" class="cross-link-card">
+            <i class="ri-speaker-3-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Speaker & headphone testing</h4>
+                <p>Channel balance, polarity, and sweeps</p>
+            </div>
+        </a>
+        <a href="/applications" class="cross-link-card">
+            <i class="ri-tools-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Practical Applications</h4>
+                <p>More ways to use test tones</p>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

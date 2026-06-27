@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+
+{% block title %}Free Speaker & Headphone Testing With Test Tones | TestTones{% endblock %}
+
+{% block description %}Test speakers and headphones with free test tones and sweeps. Check channel balance, polarity, and distortion in minutes. No download, works in your browser.{% endblock %}
+
+{% block meta_extra %}
+<meta property="og:title" content="Speaker Testing With Test Tones - Free Online Tool">
+<meta property="og:description" content="Check your speakers and headphones with sine sweeps and test tones. Verify left/right balance, polarity, distortion, and rattles in minutes.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://testtones.com/for-speaker-testing">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Speaker Testing With Test Tones: A Practical Guide",
+  "description": "How to test speakers and headphones with sine sweeps and test tones - channel balance, polarity, frequency response, distortion, and buzz hunting.",
+  "author": {"@type": "Organization", "name": "TestTones"},
+  "publisher": {"@type": "Organization", "name": "TestTones"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can test tones damage my speakers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At normal listening levels, no. The risks come from very low frequencies at high volume (excess cone movement) and from driving an amp into clipping, which sends extra high-frequency energy to tweeters. Start quiet, raise gradually, and stop if you hear distortion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My laptop speakers sound terrible on the sweep. Are they broken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Probably not. Most laptop and phone speakers can't reproduce anything below 100 to 150 Hz and roll off at the top too. That's a size limitation, not a fault. For a fair test, use the speakers or headphones you actually care about."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between a linear and logarithmic sweep?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A linear sweep changes at a constant number of Hz per second, so it races through the low octaves and lingers up high. A logarithmic sweep spends equal time per octave, which matches human hearing and is the better choice for judging response by ear."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the out-of-phase test sound so strange?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When two speakers move in opposite directions, their low frequencies partly cancel in the air between them. You lose bass and the sound seems to come from nowhere in particular. That hollow effect is exactly why a polarity check is worth doing."
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block tagline %}Test tones for checking speakers and headphones{% endblock %}
+
+{% block content %}
+<div class="use-case-container">
+    <div class="use-case-hero">
+        <h1>Speaker testing with test tones</h1>
+        <p class="hero-subtitle">Check channel balance, polarity, frequency response, and hidden rattles in your speakers or headphones - no measurement mic required.</p>
+        <a href="/#speaker-test" class="cta-button"><i class="ri-play-circle-line" aria-hidden="true"></i> Open the speaker test</a>
+    </div>
+
+    <section class="use-case-section">
+        <h2>Why test your speakers with tones</h2>
+        <p>Music hides problems. A busy mix can mask a dead tweeter, a swapped channel, or a cabinet that buzzes at one specific note. A clean test tone removes all that camouflage: you play one known frequency at a time, and anything that sounds wrong is the equipment, not the recording.</p>
+        <p><strong>TestTones generates every signal in your browser</strong> using the Web Audio API, so there is nothing to install and nothing downloaded. You get a precise sine wave at any frequency from 1 Hz to 22,000 Hz, a sweep that glides across the whole range, and dedicated buttons for the four checks that catch most speaker faults.</p>
+
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <i class="ri-headphone-line" aria-hidden="true"></i>
+                <h3>Catch wiring mistakes</h3>
+                <p>Find swapped channels and out-of-phase speakers that quietly drain your bass and blur the stereo image.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="ri-line-chart-line" aria-hidden="true"></i>
+                <h3>Hear the weak spots</h3>
+                <p>A slow sweep reveals dips, peaks, and resonances your speakers add to the sound.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="ri-alarm-warning-line" aria-hidden="true"></i>
+                <h3>Track down buzzes</h3>
+                <p>Hold a single tone and hunt the exact frequency where a driver, grille, or shelf starts to rattle.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-case-section">
+        <h2>The four checks that matter</h2>
+
+        <h3>1. Channel balance (left and right)</h3>
+        <p>Open the speaker test and use the <strong>stereo balance test</strong>. Play "Left only," then "Right only," and confirm sound comes from the correct side at a similar level. If the labels don't match the speakers, your cables or source are swapped. If one side is noticeably quieter, check the balance control on your amp or operating system before blaming the driver.</p>
+
+        <h3>2. Polarity and phase</h3>
+        <p>Use the <strong>polarity / phase test</strong>. The in-phase signal should sound full, solid, and centered between the speakers. The out-of-phase (inverted) signal sounds hollow, thin, and oddly hard to locate, with the bass falling apart. If "in-phase" is the one that sounds wrong, one speaker is wired backward - swap the + and - terminals on that speaker.</p>
+
+        <h3>3. Frequency response with a sweep</h3>
+        <p>Go to the <strong>sweep</strong> section, set the start to 20 Hz and the end to 20,000 Hz, pick <strong>logarithmic</strong> (it spends equal time per octave, matching how we hear), and use a 20 to 30 second duration. Listen at a moderate, steady volume. The level should stay roughly even. Sudden loud spots are resonances; missing ranges are roll-off - many small speakers simply stop below 80 to 100 Hz.</p>
+
+        <h3>4. Distortion and buzz hunting</h3>
+        <p>Distortion shows up as a fuzzy, gritty edge instead of a pure tone, and it usually gets worse as you raise the volume. To find a mechanical buzz, set a single frequency in the main generator and nudge it with the +1 and +0.1 Hz buttons until the rattle peaks - that tells you which driver or surface is loose. Switching the generator from a sine to a <strong>square wave</strong> adds harmonics and makes a struggling tweeter easier to expose.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>How to run a full speaker test</h2>
+        <ul class="tips-list">
+            <li><strong>Start quiet:</strong> set the volume slider low before you press play, then raise it gradually. Test tones are more revealing - and more fatiguing - than music.</li>
+            <li><strong>Confirm both channels:</strong> run the stereo balance test first so you know each side works before judging anything else.</li>
+            <li><strong>Check polarity:</strong> compare in-phase and out-of-phase. Solid and centered means correct wiring.</li>
+            <li><strong>Sweep slowly:</strong> a 20 to 30 second logarithmic sweep from 20 Hz to 20 kHz makes peaks and dips easy to hear.</li>
+            <li><strong>Hunt one tone at a time:</strong> for rattles, hold a fixed frequency and fine-tune in 0.1 Hz steps to pin down the buzz.</li>
+            <li><strong>Use pink noise to compare:</strong> the speaker test includes a pink noise button - a great quick reference because its energy is balanced across octaves.</li>
+        </ul>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Headphones vs. speakers</h2>
+        <p>The same tools work for both, but the goal shifts. With <strong>headphones</strong>, the channel and balance checks matter most - you are confirming each earcup plays cleanly and at a matched level, with no buzz from a loose driver. Phase tests are less meaningful on headphones because each ear is isolated.</p>
+        <p>With <strong>speakers</strong>, room acoustics enter the picture. A dip you hear during the sweep might be the room, not the speaker - try moving your head or the speaker a foot and listen again. For bass-specific problems, the dedicated low-frequency walkthrough on the <a href="/for-subwoofer-testing">subwoofer and bass testing page</a> goes deeper.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Common questions</h2>
+
+        <h3>Can test tones damage my speakers?</h3>
+        <p>At normal listening levels, no. The risks come from very low frequencies at high volume (excess cone movement) and from driving an amp into clipping, which sends extra high-frequency energy to tweeters. Start quiet, raise gradually, and stop if you hear distortion.</p>
+
+        <h3>My laptop speakers sound terrible on the sweep. Are they broken?</h3>
+        <p>Probably not. Most laptop and phone speakers can't reproduce anything below 100 to 150 Hz and roll off at the top too. That's a size limitation, not a fault. For a fair test, use the speakers or headphones you actually care about.</p>
+
+        <h3>What's the difference between a linear and logarithmic sweep?</h3>
+        <p>A linear sweep changes at a constant number of Hz per second, so it races through the low octaves and lingers up high. A logarithmic sweep spends equal time per octave, which matches human hearing and is the better choice for judging response by ear.</p>
+
+        <h3>Why does the out-of-phase test sound so strange?</h3>
+        <p>When two speakers move in opposite directions, their low frequencies partly cancel in the air between them. You lose bass and the sound seems to come from nowhere in particular. That hollow effect is exactly why a polarity check is worth doing.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Recommended gear</h2>
+        <div class="recommended-gear">
+            <p>A few tools that make speaker and headphone testing easier and more accurate:</p>
+            <ul>
+                <li><a href="https://amazon.com/dp/B077N2GQXC?tag=audiotools20-20" target="_blank" rel="noopener">JBL 305P MkII</a> — affordable studio monitors with even, revealing response for critical listening</li>
+                <li><a href="https://amazon.com/dp/B07F3CTWKN?tag=audiotools20-20" target="_blank" rel="noopener">miniDSP UMIK-1</a> — USB measurement mic that turns your sweeps into real frequency plots</li>
+                <li><a href="https://amazon.com/dp/B0002E4Z8M?tag=audiotools20-20" target="_blank" rel="noopener">Galaxy Audio Check Mate</a> — handy SPL meter for matching levels between channels and speakers</li>
+            </ul>
+            <p class="gear-note">Links may earn us a commission at no extra cost to you.</p>
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <h2>Ready to test your speakers?</h2>
+        <p>Open the free generator, sweep, and speaker test tools - all in your browser.</p>
+        <a href="/#speaker-test" class="cta-button"><i class="ri-play-circle-line" aria-hidden="true"></i> Start the speaker test</a>
+    </div>
+
+    <div class="cross-links">
+        <a href="/for-subwoofer-testing" class="cross-link-card">
+            <i class="ri-volume-vibrate-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Subwoofer & bass testing</h4>
+                <p>Test 20-200 Hz, room modes, and rattles</p>
+            </div>
+        </a>
+        <a href="/for-hearing-test" class="cross-link-card">
+            <i class="ri-ear-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Hearing range test</h4>
+                <p>Check your high-frequency limit at home</p>
+            </div>
+        </a>
+        <a href="https://focushum.com" class="cross-link-card" target="_blank" rel="noopener">
+            <i class="ri-sound-module-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Focus Hum</h4>
+                <p>White, pink, and brown noise generator</p>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

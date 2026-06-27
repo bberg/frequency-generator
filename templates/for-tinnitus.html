@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}Tinnitus Frequency Test - Match Your Pitch | TestTones{% endblock %}
+
+{% block description %}Match the pitch of your tinnitus with free pure tones. Use the TestTones frequency matcher to find and note your ringing - educational, not medical advice.{% endblock %}
+
+{% block meta_extra %}
+<meta property="og:title" content="Tinnitus Frequency Test - Match Your Tinnitus Pitch">
+<meta property="og:description" content="Use free pure tones to find the frequency of your tinnitus. A simple matcher to identify and note your pitch, with honest limits - educational, not medical advice.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://testtones.com/for-tinnitus">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Match the Frequency of Your Tinnitus With Test Tones",
+  "description": "An educational guide to identifying the pitch of your tinnitus using pure tones - sliding a tone to match the ringing, checking the octave, and noting the frequency for your audiologist.",
+  "author": {"@type": "Organization", "name": "TestTones"},
+  "publisher": {"@type": "Organization", "name": "TestTones"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can a test tone cure or treat my tinnitus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Matching your tinnitus to a tone helps you describe and understand it, but it is not a treatment or a cure. Some people find a similar tone or broadband sound useful for masking at night, yet relief varies a lot from person to person. For evaluation and care, see an audiologist or doctor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my matched frequency keep landing an octave off?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Octave confusion is extremely common with tinnitus matching - a 4,000 Hz tone and an 8,000 Hz tone can sound deceptively similar when you are matching a high ring. Use the check-octave step to compare the tone an octave above and below what you picked, then keep whichever truly matches."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My tinnitus sounds like a hiss, not a pure tone. Can I still match it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tonal tinnitus matches a single sine tone best. If yours is a hiss, buzz, or roar, a pure tone will only approximate it - try to find the frequency where the ring sits loudest within the noise. Many people with hiss-like tinnitus find broadband or pink noise a closer comparison than a single tone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I worry about how high my tinnitus frequency is?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The pitch number itself is not a diagnosis. Tinnitus often sits near a region of high-frequency hearing loss, which is why many people match it between 4,000 and 8,000 Hz, but the frequency alone does not tell you the cause. New, one-sided, or pulsing tinnitus should always be checked by a professional."
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block tagline %}Pure tones for matching the pitch of your tinnitus{% endblock %}
+
+{% block content %}
+<div class="use-case-container">
+    <div class="use-case-hero">
+        <h1>Match the frequency of your tinnitus</h1>
+        <p class="hero-subtitle">Slide a pure tone until it lines up with the ringing you hear, confirm you have the right octave, and note the frequency to share with an audiologist - educational, not medical advice.</p>
+        <a href="/#hearing-test" class="cta-button"><i class="ri-play-circle-line" aria-hidden="true"></i> Open the tinnitus matcher</a>
+    </div>
+
+    <section class="use-case-section">
+        <h2>Putting a number on the ringing</h2>
+        <p>Tinnitus is the perception of sound - usually a ring, hiss, or buzz - with no external source. It is common, often linked to noise exposure or age-related hearing change, and for most people it is not dangerous. One thing that helps is simply knowing its pitch. When you can say "my tinnitus sits around 6,000 Hz," you can describe it clearly, compare it over time, and give an audiologist a useful starting point.</p>
+        <p><strong>This page is educational and is not medical advice.</strong> A matched frequency is not a diagnosis and a test tone is not a treatment. What a tone can do is let you find the pitch that matches your ring. TestTones generates clean sine tones in your browser with 0.1 Hz precision, so there is nothing to install and nothing to buy to try it.</p>
+
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <i class="ri-focus-3-line" aria-hidden="true"></i>
+                <h3>Pinpoint your pitch</h3>
+                <p>The tinnitus matcher slides a tone smoothly until it sits right on top of your ringing.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="ri-arrow-up-down-line" aria-hidden="true"></i>
+                <h3>Confirm the octave</h3>
+                <p>A check-octave step compares one octave up and down so you do not land an octave off.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="ri-file-list-3-line" aria-hidden="true"></i>
+                <h3>Note it for your audiologist</h3>
+                <p>Write down the frequency and ear, and bring a clear description to your next appointment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Before you start</h2>
+        <ul class="tips-list">
+            <li><strong>Use comfortable, low volume:</strong> set the volume slider low before you begin. The goal is to match pitch, not loudness - you never need a loud tone to find your frequency.</li>
+            <li><strong>Find a quiet room:</strong> a calm, quiet space makes your tinnitus easier to hear clearly and easier to compare against the tone.</li>
+            <li><strong>Use good headphones:</strong> over-ear headphones reproduce high frequencies more accurately than laptop or phone speakers, which matters because most tinnitus sits high.</li>
+            <li><strong>Match the right ear:</strong> if your tinnitus is mainly in one ear, use the ear selector so you compare the tone against the side that rings.</li>
+            <li><strong>Take breaks:</strong> listening hard for a faint ring is tiring. Stop if it becomes stressful - this should be a calm, curious exercise.</li>
+        </ul>
+    </section>
+
+    <section class="use-case-section">
+        <h2>How to match your tinnitus, step by step</h2>
+
+        <h3>1. Open the tinnitus matcher</h3>
+        <p>In the hearing test section, find the <strong>tinnitus matcher</strong>. It plays a single sine tone and lets you slide the frequency up and down. Start somewhere in the middle and listen for whether the tone sits below or above your ringing.</p>
+
+        <h3>2. Slide toward your pitch</h3>
+        <p>Move the frequency until the tone seems to blend into your tinnitus rather than beat against it. Most tonal tinnitus lands in the higher range, often between 4,000 and 8,000 Hz, but yours may be lower or higher. Use the <strong>+1 Hz and +0.1 Hz</strong> steps on the main generator if you want to fine-tune a frequency you have nearly nailed.</p>
+
+        <h3>3. Check the octave</h3>
+        <p>This is the step people skip and regret. Use <strong>check octave</strong> to hear the tone one octave above and one octave below your pick. It is easy to match 4,000 Hz when your tinnitus is really at 8,000 Hz, because octaves sound related. Keep whichever truly matches the ring.</p>
+
+        <h3>4. Note the frequency and ear</h3>
+        <p>Write down the final frequency, which ear it matched, and the date. If you repeat this every few weeks, you build a simple record you can show an audiologist - far more useful than "it rings sometimes."</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Common questions</h2>
+
+        <h3>Can a test tone cure or treat my tinnitus?</h3>
+        <p>No. Matching your tinnitus to a tone helps you describe and understand it, but it is not a treatment or a cure. Some people find a similar tone or broadband sound useful for masking at night, yet relief varies a lot from person to person. For evaluation and care, see an audiologist or doctor.</p>
+
+        <h3>Why does my matched frequency keep landing an octave off?</h3>
+        <p>Octave confusion is extremely common with tinnitus matching - a 4,000 Hz tone and an 8,000 Hz tone can sound deceptively similar when you are matching a high ring. Use the check-octave step to compare the tone an octave above and below what you picked, then keep whichever truly matches.</p>
+
+        <h3>My tinnitus sounds like a hiss, not a pure tone. Can I still match it?</h3>
+        <p>Tonal tinnitus matches a single sine tone best. If yours is a hiss, buzz, or roar, a pure tone will only approximate it - try to find the frequency where the ring sits loudest within the noise. Many people with hiss-like tinnitus find broadband or pink noise a closer comparison than a single tone.</p>
+
+        <h3>Should I worry about how high my tinnitus frequency is?</h3>
+        <p>The pitch number itself is not a diagnosis. Tinnitus often sits near a region of high-frequency hearing loss, which is why many people match it between 4,000 and 8,000 Hz, but the frequency alone does not tell you the cause. New, one-sided, or pulsing tinnitus should always be checked by a professional.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>When to see a professional</h2>
+        <p>Matching your pitch is a helpful self-awareness tool, not a substitute for care. See an audiologist or doctor if your tinnitus is new, appears in only one ear, pulses in time with your heartbeat, comes with dizziness or sudden hearing loss, or simply bothers you enough to affect sleep and concentration. Effective help exists - from hearing aids and sound therapy to counselling - and a professional can point you to what fits. The frequency you noted here is a useful thing to bring with you.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Recommended gear</h2>
+        <div class="recommended-gear">
+            <p>Accurate, well-isolated headphones make matching a high-pitched ring far easier and more repeatable:</p>
+            <ul>
+                <li><a href="https://amazon.com/dp/B00HVLUR86?tag=audiotools20-20" target="_blank" rel="noopener">Audio-Technica ATH-M50x</a> — closed-back over-ear with even response for steady, repeatable pitch matching</li>
+                <li><a href="https://amazon.com/dp/B000AJIF4E?tag=audiotools20-20" target="_blank" rel="noopener">Beyerdynamic DT 770 Pro</a> — strong isolation that quiets the room so a faint ring is easier to compare</li>
+            </ul>
+            <p class="gear-note">Links may earn us a commission at no extra cost to you.</p>
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <h2>Ready to find your frequency?</h2>
+        <p>Open the free tinnitus matcher - slide to your pitch, check the octave, and note the number.</p>
+        <a href="/#hearing-test" class="cta-button"><i class="ri-play-circle-line" aria-hidden="true"></i> Start the tinnitus matcher</a>
+    </div>
+
+    <div class="cross-links">
+        <a href="/for-hearing-test" class="cross-link-card">
+            <i class="ri-ear-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Hearing range test</h4>
+                <p>Check your high-frequency limit and compare ears</p>
+            </div>
+        </a>
+        <a href="/science" class="cross-link-card">
+            <i class="ri-flask-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Science & Research</h4>
+                <p>Hearing physiology and audiometric standards</p>
+            </div>
+        </a>
+        <a href="/faq" class="cross-link-card">
+            <i class="ri-question-answer-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>FAQ</h4>
+                <p>Common questions about test tones</p>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

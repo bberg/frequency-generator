@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block title %}Subwoofer Test Tones - Free 20-200 Hz Bass Test | TestTones{% endblock %}
+
+{% block description %}Test your subwoofer and bass with free 20-200 Hz test tones. Check low-end extension, find room modes, and hunt down rattles - right in your browser.{% endblock %}
+
+{% block meta_extra %}
+<meta property="og:title" content="Subwoofer Test Tones - Free 20-200 Hz Bass Test">
+<meta property="og:description" content="Free low-frequency test tones for subwoofers. Check bass extension, find room modes and standing waves, and track down rattles from 20 Hz up.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://testtones.com/for-subwoofer-testing">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Subwoofer and Bass Testing With Test Tones",
+  "description": "How to test a subwoofer with 20-200 Hz tones and sweeps - bass extension, room modes, standing waves, crossover setup, and rattle hunting.",
+  "author": {"@type": "Organization", "name": "TestTones"},
+  "publisher": {"@type": "Organization", "name": "TestTones"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "I can barely hear the 20 Hz tone. Is my sub broken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Probably not. Two things are at play: human hearing is far less sensitive at 20 Hz (you need much more level for it to seem as loud as a 60 Hz tone), and many subs roll off before 20 Hz. If 30 and 40 Hz are strong and clean, your sub is fine - it just doesn't reach the very bottom."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will low tones damage my subwoofer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sustained very low frequencies at high volume can over-extend a driver, especially ported designs below their tuning frequency. Keep the level moderate, listen for any chuffing or distress, and don't hold a 20 Hz tone at full blast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I do this on a soundbar or laptop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not meaningfully. Soundbars and laptops can't reproduce deep bass at all, so the test just confirms their limits. Use a real subwoofer or full-range speakers for results that mean anything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use pink noise instead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pink noise (in the speaker test) is great for a quick overall balance check, but single tones are better for pinpointing a specific room mode or rattle because you know exactly which frequency you're hearing."
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block tagline %}Low-frequency test tones for subwoofers and bass{% endblock %}
+
+{% block content %}
+<div class="use-case-container">
+    <div class="use-case-hero">
+        <h1>Subwoofer and bass testing</h1>
+        <p class="hero-subtitle">Find out how low your subwoofer really goes, locate room modes that wreck your bass, and track down rattles - using clean 20-200 Hz tones.</p>
+        <a href="/#speaker-test" class="cta-button"><i class="ri-play-circle-line" aria-hidden="true"></i> Open the bass test</a>
+    </div>
+
+    <section class="use-case-section">
+        <h2>The low end is where rooms fight back</h2>
+        <p>Bass is the hardest part of any system to get right, and it's rarely the subwoofer's fault. Long wavelengths interact with your walls, creating spots where notes boom and spots where they vanish. A clean low-frequency tone is the only honest way to hear what's happening, because music almost never holds a single bass note long enough to judge.</p>
+        <p><strong>TestTones plays pure sine tones down to 20 Hz</strong> straight from your browser. The speaker test section has one-tap bass buttons for 20, 30, 40, 50, 60, and 80 Hz, and the main generator and sweep let you cover the full 20 to 200 Hz region with 0.1 Hz precision.</p>
+
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <i class="ri-arrow-down-circle-line" aria-hidden="true"></i>
+                <h3>Measure real extension</h3>
+                <p>Step down from 80 Hz toward 20 Hz and hear exactly where your sub stops producing usable output.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="ri-soundcloud-line" aria-hidden="true"></i>
+                <h3>Map room modes</h3>
+                <p>A slow low sweep exposes the boomy peaks and dead nulls your room adds to every bass note.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="ri-home-gear-line" aria-hidden="true"></i>
+                <h3>Silence the rattles</h3>
+                <p>Hold one tone and walk the room to find the shelf, vent, or window that buzzes back.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-case-section">
+        <h2>How low does your subwoofer really go?</h2>
+        <p>Open the speaker test and find the <strong>subwoofer / bass test</strong> card. Start at 80 Hz - almost any sub handles that - and confirm you hear a clean, steady tone. Then step down: 60, 50, 40, 30, and finally 20 Hz. Keep the volume constant. At some point the tone gets much quieter or turns into a soft flapping sound rather than a clear pitch. That's your sub's practical limit.</p>
+        <p><strong>One caution:</strong> below about 30 Hz you may feel the tone more than hear it, and pushing the volume to "make it louder" forces the cone into huge excursions. If you hear a chuffing or distressed sound, back off - you're past what the driver or port can do cleanly, not gaining real bass.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Finding room modes and standing waves</h2>
+        <p>Room modes are the single biggest reason bass sounds uneven from seat to seat. They happen at frequencies tied to your room's dimensions, and they're easy to find by ear.</p>
+        <p>In the <strong>sweep</strong> section, set the start to 20 Hz, the end to 200 Hz, choose <strong>logarithmic</strong>, and use a long duration like 30 to 60 seconds so the tone moves slowly. Sit in your normal listening spot and listen for notes that jump out far louder than the rest (peaks) and notes that nearly disappear (nulls). Those are your room modes.</p>
+        <p>To confirm a specific problem frequency, switch to the main generator, dial it in, and move your head or walk around. If a 45 Hz note is thunderous on the couch but gone two feet away, that's a standing wave. The fix is placement - moving the sub or the seat often helps more than any equalizer.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Setting the crossover and hunting rattles</h2>
+        <ul class="tips-list">
+            <li><strong>Crossover point:</strong> play an 80 Hz tone - the most common crossover frequency - and adjust your sub's level so it blends with the main speakers rather than booming on its own.</li>
+            <li><strong>Find the seam:</strong> sweep slowly across 60 to 120 Hz and listen for a dip or a lump where the sub and speakers hand off. A smooth transition means your crossover and phase are set well.</li>
+            <li><strong>Rattle hunting:</strong> hold a single tone and use the +1 and +0.1 Hz buttons to creep through the 30 to 60 Hz range. Most rattles peak at one exact frequency, which makes the offending object easy to locate.</li>
+            <li><strong>Walk the room:</strong> with a tone playing, move around and touch suspect objects - light fixtures, vents, picture frames, loose grilles. The buzz usually stops the moment you press the right thing.</li>
+            <li><strong>Check phase:</strong> if bass feels weak everywhere, flip the sub's phase switch while a 50 to 80 Hz tone plays and keep whichever setting sounds fuller.</li>
+        </ul>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Common questions</h2>
+
+        <h3>I can barely hear the 20 Hz tone. Is my sub broken?</h3>
+        <p>Probably not. Two things are at play: human hearing is far less sensitive at 20 Hz (you need much more level for it to seem as loud as a 60 Hz tone), and many subs roll off before 20 Hz. If 30 and 40 Hz are strong and clean, your sub is fine - it just doesn't reach the very bottom.</p>
+
+        <h3>Will low tones damage my subwoofer?</h3>
+        <p>Sustained very low frequencies at high volume can over-extend a driver, especially ported designs below their tuning frequency. Keep the level moderate, listen for any chuffing or distress, and don't hold a 20 Hz tone at full blast.</p>
+
+        <h3>Can I do this on a soundbar or laptop?</h3>
+        <p>Not meaningfully. Soundbars and laptops can't reproduce deep bass at all, so the test just confirms their limits. Use a real subwoofer or full-range speakers for results that mean anything.</p>
+
+        <h3>Should I use pink noise instead?</h3>
+        <p>Pink noise (in the speaker test) is great for a quick overall balance check, but single tones are better for pinpointing a specific room mode or rattle because you know exactly which frequency you're hearing.</p>
+    </section>
+
+    <section class="use-case-section">
+        <h2>Recommended gear</h2>
+        <div class="recommended-gear">
+            <p>Useful additions for measuring and dialing in low-frequency performance:</p>
+            <ul>
+                <li><a href="https://amazon.com/dp/B07F3CTWKN?tag=audiotools20-20" target="_blank" rel="noopener">miniDSP UMIK-1</a> — USB measurement mic for mapping room modes and bass response objectively</li>
+                <li><a href="https://amazon.com/dp/B0002E4Z8M?tag=audiotools20-20" target="_blank" rel="noopener">Galaxy Audio Check Mate</a> — SPL meter for level-matching the sub to your main speakers</li>
+                <li><a href="https://amazon.com/dp/B000AJIF4E?tag=audiotools20-20" target="_blank" rel="noopener">Beyerdynamic DT 770 Pro</a> — closed-back headphones with extended bass for a room-free reference</li>
+            </ul>
+            <p class="gear-note">Links may earn us a commission at no extra cost to you.</p>
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <h2>Ready to dial in your bass?</h2>
+        <p>Open the free bass test, sweep, and generator - all in your browser, down to 20 Hz.</p>
+        <a href="/#speaker-test" class="cta-button"><i class="ri-play-circle-line" aria-hidden="true"></i> Start the bass test</a>
+    </div>
+
+    <div class="cross-links">
+        <a href="/for-speaker-testing" class="cross-link-card">
+            <i class="ri-speaker-3-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Speaker & headphone testing</h4>
+                <p>Channel balance, polarity, and sweeps</p>
+            </div>
+        </a>
+        <a href="/for-hearing-test" class="cross-link-card">
+            <i class="ri-ear-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>Hearing range test</h4>
+                <p>Check your high-frequency limit at home</p>
+            </div>
+        </a>
+        <a href="https://omtones.com" class="cross-link-card" target="_blank" rel="noopener">
+            <i class="ri-rhythm-line" aria-hidden="true"></i>
+            <div class="link-content">
+                <h4>OmTones</h4>
+                <p>Ambient meditation drones</p>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}
