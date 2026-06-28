@@ -2863,3 +2863,198 @@ body {
 .network-card i{color:var(--primary);font-size:1.4rem;}
 .nt-name{font-weight:700;color:var(--text);}
 .nt-blurb{font-size:.8125rem;color:var(--text-secondary);}
+
+
+/* === DESIGN SYSTEM V2 === */
+/* ============================================================
+   Audio Tools Network — Design System v2
+   SITE: TestTones — "The Signal Bench"
+   Mood: precise, trustworthy, instrument-grade, calm.
+   Aesthetic: dark scope-graticule bench, electric-cyan phosphor
+   trace on deep steel-navy, amber as the warning/precision accent.
+   Strategy: (1) per-site PALETTE via token overrides = identity;
+   (2) shared ELEVATION layer = world-class bar.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* ---- TestTones palette: electric cyan signal on steel-navy ---- */
+:root {
+  --primary: #22D3EE;
+  --primary-dark: #0E9BB8;
+  --primary-light: #CDF7FF;
+  --accent: #FFB020;
+  --bg: #0A0F1A;
+  --surface: #121A2A;
+  --surface-raised: #16213450;
+  --text: #ECF4FB;
+  --text-secondary: #9DB0C7;
+  --text-muted: #66798F;
+  --border: #1E2B40;
+  --border-focus: #2C405E;
+  --grad: linear-gradient(120deg, #22D3EE 0%, #5BE8F2 45%, #7DF0C8 110%);
+  --grad-amber: linear-gradient(120deg, #FFB020 0%, #FFCB5C 100%);
+  --glow: 0 0 0 1px rgba(34,211,238,.16), 0 18px 50px -14px rgba(34,211,238,.40);
+  --shadow-lg: 0 26px 64px -20px rgba(0,0,0,.85), 0 8px 24px -12px rgba(0,0,0,.7);
+}
+
+/* ---- Ambient background: scope-bench depth, not flat black ---- */
+body {
+  background:
+    radial-gradient(1100px 640px at 16% -10%, rgba(34,211,238,.16), transparent 60%),
+    radial-gradient(940px 560px at 94% 4%, rgba(20,48,70,.55), transparent 58%),
+    radial-gradient(820px 600px at 50% 122%, rgba(255,176,32,.07), transparent 60%),
+    linear-gradient(135deg, #0A0F1A 0%, #0E1726 55%, #143046 100%) !important;
+  background-attachment: fixed;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* faint graticule grid overlay — the bench reads as an instrument */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(34,211,238,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,211,238,.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(1200px 800px at 50% 30%, #000 0%, transparent 80%);
+  -webkit-mask-image: radial-gradient(1200px 800px at 50% 30%, #000 0%, transparent 80%);
+}
+.container { position: relative; z-index: 1; }
+
+/* ---- Container: glassy hairline panel with cyan lift ---- */
+.container {
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 22px;
+  box-shadow: var(--shadow-lg), var(--glow);
+  background:
+    linear-gradient(180deg, rgba(34,211,238,.035), rgba(255,255,255,0) 260px),
+    var(--surface);
+}
+
+/* ---- Hero: display wordmark + scope-readout tagline ---- */
+.page-header {
+  padding: 3.5rem 3rem 2.25rem;
+  background:
+    radial-gradient(700px 220px at 50% -40%, rgba(34,211,238,.10), transparent 70%),
+    var(--surface);
+}
+.header-content h1,
+.header-content .site-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tagline {
+  font-size: 1.075rem;
+  color: var(--text-secondary);
+  max-width: 56ch; margin: 0.85rem auto 0; line-height: 1.55;
+}
+.page-header::after { height: 3px; background: var(--grad); opacity: .9; }
+
+/* ---- Badges: refined glass pills ---- */
+.header-badge {
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 2rem; backdrop-filter: blur(6px);
+  color: var(--text-secondary);
+  transition: transform .2s ease, border-color .2s ease;
+}
+.header-badge:hover { transform: translateY(-1px); border-color: rgba(34,211,238,.45); }
+.header-badge i { color: var(--accent); }
+
+/* ---- Nav: animated active underline ---- */
+.mini-nav { background: rgba(8,13,22,.5); }
+.nav-link { transition: color .2s ease, background .2s ease; }
+.nav-link::after {
+  content: ''; position: absolute; left: 1.25rem; right: 1.25rem; bottom: 0;
+  height: 2px; background: var(--grad); transform: scaleX(0); transform-origin: left;
+  transition: transform .22s ease;
+}
+.nav-link:hover { color: var(--text); background: rgba(34,211,238,.07); }
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* ---- The Hz readout: JetBrains Mono, phosphor-glow numerals ---- */
+input[type="number"],
+.frequency-display, .freq-display, .freq-value, .frequency-value,
+.value-display, output, .readout {
+  font-family: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace !important;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+.frequency-display, .freq-display, .freq-value, .frequency-value {
+  color: var(--primary-light) !important;
+  text-shadow: 0 0 16px rgba(34,211,238,.40), 0 0 2px rgba(34,211,238,.55);
+}
+
+/* scope / waveform canvases read as instrument screens, not dead black */
+canvas {
+  border-radius: 12px !important;
+  background:
+    linear-gradient(180deg, rgba(34,211,238,.05), rgba(8,13,22,0)) ,
+    rgba(8,13,22,.6) !important;
+  box-shadow: inset 0 0 0 1px rgba(34,211,238,.12), inset 0 0 40px rgba(34,211,238,.04) !important;
+}
+
+/* ---- Primary actions: gradient pill with glow + lift ---- */
+button.btn-primary, .btn-primary, .play-btn, .play-button, button[class*="play"],
+.generate-btn, .primary-btn, .btn--primary {
+  background: var(--grad) !important;
+  border: none !important; color: #04222A !important; font-weight: 700 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 10px 30px -8px rgba(34,211,238,.55), inset 0 1px 0 rgba(255,255,255,.4) !important;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease !important;
+}
+button.btn-primary:hover, .btn-primary:hover, .play-btn:hover, .play-button:hover,
+button[class*="play"]:hover, .generate-btn:hover, .primary-btn:hover, .btn--primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 42px -8px rgba(34,211,238,.7), inset 0 1px 0 rgba(255,255,255,.5) !important;
+  filter: saturate(1.08) !important;
+}
+
+/* stop / panic actions carry the amber warning language */
+.stop-btn, .stop-button, button[class*="stop"], .panic, .panic-stop {
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,176,32,.4) !important;
+  color: var(--accent) !important;
+}
+
+/* ---- Inputs / sliders / cards: tighten to the system ---- */
+input, select, textarea {
+  border-radius: 12px !important;
+  border: 1px solid var(--border) !important;
+  background: rgba(8,13,22,.55) !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: rgba(34,211,238,.5) !important;
+  box-shadow: 0 0 0 3px rgba(34,211,238,.14) !important;
+  outline: none !important;
+}
+input[type="range"] { accent-color: var(--primary); }
+.preset-btn, .card, .panel, .tool-card, .feature-card, .network-card {
+  border-radius: 16px !important;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.preset-btn:hover {
+  border-color: rgba(34,211,238,.45) !important;
+  color: var(--primary-light) !important;
+}
+.network-card:hover, .tool-card:hover, .card:hover, .feature-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(34,211,238,.4);
+  box-shadow: 0 16px 36px -16px rgba(34,211,238,.5);
+}
+
+/* ---- Section accents ---- */
+h2 { letter-spacing: -0.02em; }
+a { color: var(--primary-light); }
+::selection { background: rgba(34,211,238,.4); color: #04222A; }
